@@ -1,0 +1,1151 @@
+JAP_interservice_rivalry = {
+
+	JAP_cooldown_time = {
+		icon = generic_political_discourse
+		allowed = { original_tag = JAP }	
+		visible = {	has_active_mission = JAP_cooldown_time	}	
+		available = {	NOT = { country_exists = JAP }	}
+		days_mission_timeout = 175
+		activation = {	has_country_flag = JAP_war_conferences_cd	} 
+		fire_only_once = no
+		is_good = yes		
+	}
+
+	JAP_steel_for_guns = {
+
+		icon = generic_tank
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_steel_for_ships
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_steel_for_ships
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			random_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			JAP_interservice_rivalry_towards_army = yes
+			set_country_flag = JAP_steel_for_guns
+		}
+	}
+	JAP_steel_for_ships = {
+
+		icon = generic_naval
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_steel_for_guns
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_steel_for_guns
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 5
+		}
+		complete_effect = {
+			random_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+			
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			JAP_interservice_rivalry_towards_navy = yes
+			set_country_flag = JAP_steel_for_ships
+		}
+	}
+	JAP_prioritize_army_aircraft_construction = {
+
+		icon = generic_tank
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_prioritize_naval_aircraft_construction
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_prioritize_naval_aircraft_construction
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			add_ideas = JAP_prioritize_army_aircraft_construction
+			JAP_interservice_rivalry_towards_army = yes
+			set_country_flag = JAP_prioritize_army_aircraft_construction
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_prioritize_naval_aircraft_construction = {
+
+		icon = generic_naval
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_prioritize_army_aircraft_construction
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_prioritize_army_aircraft_construction
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			add_ideas = JAP_prioritize_naval_aircraft_construction
+			JAP_interservice_rivalry_towards_navy = yes
+			set_country_flag = JAP_prioritize_naval_aircraft_construction
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_everybody_serves = {
+
+		icon = generic_tank
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_draft_exemptions
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_draft_exemptions
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 1
+		}
+		modifier = {
+			conscription = 0.02
+		}
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			JAP_interservice_rivalry_towards_army = yes
+			set_country_flag = JAP_everybody_serves
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_draft_exemptions = {
+
+		icon = generic_naval
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_everybody_serves
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_everybody_serves
+			}
+		}
+		cost = 35
+		days_remove = -1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 3
+		}
+		modifier = {
+			industrial_capacity_factory = 0.05
+			industrial_capacity_dockyard = 0.05
+		}
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			JAP_interservice_rivalry_towards_navy = yes
+			set_country_flag = JAP_draft_exemptions
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_raiding_regiments = {
+
+		icon = generic_tank
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_special_air_landing_force
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_special_air_landing_force
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 1
+		}
+		modifier = {
+			special_forces_attack_factor = 0.05 
+			special_forces_defence_factor = 0.05
+		}
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			set_country_flag = JAP_raiding_regiments
+			JAP_interservice_rivalry_towards_army = yes
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_special_air_landing_force = {
+
+		icon = generic_naval
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			NOT = {
+				has_country_flag = JAP_raiding_regiments
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = JAP_raiding_regiments
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 1
+		}
+		modifier = {
+			special_forces_attack_factor = 0.05 
+			special_forces_defence_factor = 0.05
+		}
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			set_country_flag = JAP_special_air_landing_force
+			JAP_interservice_rivalry_towards_navy = yes
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_favor_army = {
+
+		icon = generic_tank
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			AND = {
+				OR = { 
+					has_country_flag = JAP_raiding_regiments 
+					has_country_flag = JAP_special_air_landing_force
+				}
+				OR = { 
+					has_country_flag = JAP_everybody_serves
+					has_country_flag = JAP_draft_exemptions
+				}
+				OR = { 
+					has_country_flag = JAP_prioritize_naval_aircraft_construction
+					has_country_flag = JAP_prioritize_army_aircraft_construction
+				}
+				OR = { 
+					has_country_flag = JAP_steel_for_guns
+					has_country_flag = JAP_steel_for_ships
+				}
+			}
+			
+		}
+		visible = {
+			AND = {
+				OR = { 
+					has_country_flag = JAP_raiding_regiments 
+					has_country_flag = JAP_special_air_landing_force
+				}
+				OR = { 
+					has_country_flag = JAP_everybody_serves
+					has_country_flag = JAP_draft_exemptions
+				}
+				OR = { 
+					has_country_flag = JAP_prioritize_naval_aircraft_construction
+					has_country_flag = JAP_prioritize_army_aircraft_construction
+				}
+				OR = { 
+					has_country_flag = JAP_steel_for_guns
+					has_country_flag = JAP_steel_for_ships
+				}
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			JAP_interservice_rivalry_towards_army = yes
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+	JAP_favor_navy = {
+
+		icon = generic_naval
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = { 
+			NOT = {
+				has_country_flag = JAP_war_conferences_cd
+			}
+			AND = {
+				OR = { 
+					has_country_flag = JAP_raiding_regiments 
+					has_country_flag = JAP_special_air_landing_force
+				}
+				OR = { 
+					has_country_flag = JAP_everybody_serves
+					has_country_flag = JAP_draft_exemptions
+				}
+				OR = { 
+					has_country_flag = JAP_prioritize_naval_aircraft_construction
+					has_country_flag = JAP_prioritize_army_aircraft_construction
+				}
+				OR = { 
+					has_country_flag = JAP_steel_for_guns
+					has_country_flag = JAP_steel_for_ships
+				}
+			}
+			
+		}
+		visible = {
+			AND = {
+				OR = { 
+					has_country_flag = JAP_raiding_regiments 
+					has_country_flag = JAP_special_air_landing_force
+				}
+				OR = { 
+					has_country_flag = JAP_everybody_serves
+					has_country_flag = JAP_draft_exemptions
+				}
+				OR = { 
+					has_country_flag = JAP_prioritize_naval_aircraft_construction
+					has_country_flag = JAP_prioritize_army_aircraft_construction
+				}
+				OR = { 
+					has_country_flag = JAP_steel_for_guns
+					has_country_flag = JAP_steel_for_ships
+				}
+			}
+		}
+		cost = 35
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			set_country_flag = { flag = JAP_war_conferences_cd value = 1 days = 180 }
+			JAP_interservice_rivalry_towards_navy = yes
+			add_timed_idea = {
+				idea = JAP_balance_of_power
+				days = 180
+			}
+		}
+	}
+}
+
+
+
+#Category allowed for JAP
+#Not visible if puppet
+JAP_southern_expansion = {
+
+	JAP_pressure_france = { 
+
+		allowed = {
+			tag = JAP
+		}
+
+		available = {
+			OR = {
+				date > 1940.6.25			
+				AND = {
+					EFR = { exists = yes }
+					286 = { is_owned_by  = EFR } 
+					741 = { is_owned_by  = EFR } 
+					670 = { is_owned_by  = EFR } 
+					671 = { is_owned_by  = EFR } 				
+				}
+			}
+
+		}
+
+		visible = {
+			has_completed_focus = JAP_strike_south_doctrine
+		}
+
+		fire_only_once = yes
+
+
+		modifier = {
+
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				FRA = { has_war = no }
+			}			
+			modifier = {
+				factor = 3
+				FRA = { has_war = yes } 
+				OR = {
+					16 = { NOT = { is_controlled_by = FRA } } #Paris
+					strength_ratio = {
+						tag = FRA
+						ratio > 0.9
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			EFR = { country_event = { id = france.1 } }
+		}
+
+	}
+}
+
+#Category allowed for JAP
+
+prospect_for_resources = {
+
+#  #  ##  ###  ### #  # ### ###  #  #     ###  ###  ##  ##  #  # ###   ##  ###      ##  ###  ###  ##  
+## # #  # #  #  #  #  # #   #  # ## #     #  # #   #   #  # #  # #  # #  # #       #  # #  # #   #  # 
+# ## #  # ###   #  #### ##  ###  # ##     ###  ##   #  #  # #  # ###  #    ##      #### ###  ##  #### 
+#  # #  # #  #  #  #  # #   #  # #  #     #  # #     # #  # #  # #  # #  # #       #  # #  # #   #  # 
+#  #  ##  #  #  #  #  # ### #  # #  #     #  # ### ##   ##   ##  #  #  ##  ###     #  # #  # ### #  # 
+
+	#Below is visible when JAP_establish_the_northern_resource_area is completed
+	JAP_develop_north_sakhalin_oil_deposits = { #655
+		icon = oil
+
+		highlight_states = {
+			state = 655
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 655
+			has_tech = excavation2
+		}
+
+		visible = {
+			has_completed_focus = JAP_expand_manchurian_farms_and_mines
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			655 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+		}
+	}
+
+
+ ##  ##  #  # ### #  # ### ###  #  #     ###  ###  ##  ##  #  # ###   ##  ###      ##  ###  ###  ##  
+#   #  # #  #  #  #  # #   #  # ## #     #  # #   #   #  # #  # #  # #  # #       #  # #  # #   #  # 
+ #  #  # #  #  #  #### ##  ###  # ##     ###  ##   #  #  # #  # ###  #    ##      #### ###  ##  #### 
+  # #  # #  #  #  #  # #   #  # #  #     #  # #     # #  # #  # #  # #  # #       #  # #  # #   #  # 
+##   ##   ##   #  #  # ### #  # #  #     #  # ### ##   ##   ##  #  #  ##  ###     #  # #  # ### #  # 
+
+#623:0 "Luzon"
+#627:0 "Mindanao"
+#625:0 "Samar"
+#725:0 "Nauru"
+
+	JAP_develop_mindanao_steel_deposits = { #627
+		icon = steel
+
+		highlight_states = {
+			state = 627
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 627
+			has_tech = excavation4
+		}
+
+		visible = {
+			has_completed_focus = JAP_Begin_Exploitation_of_South_East_Asia
+			627 = {
+				NOT = {
+					has_state_flag = mindanao_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 6
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			627 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				set_state_flag = mindanao_steel_developed
+			}
+			625 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}			
+		}
+	}
+
+
+ ##  #  # ### #  # ###  ## ###     ###  ###  ##  ##  #  # ###   ##  ###  ## 
+#  # #  #  #  ## # #   #   #       #  # #   #   #  # #  # #  # #  # #   #   
+#    ####  #  # ## ##   #  ##      ###  ##   #  #  # #  # ###  #    ##   #  
+#  # #  #  #  #  # #     # #       #  # #     # #  # #  # #  # #  # #     # 
+ ##  #  # ### #  # ### ##  ###     #  # ### ##   ##   ##  #  #  ##  ### ##  
+
+#597:0 "Shandong"
+#621:0 "Suiyuan"
+
+	JAP_develop_suiyuan_steel_deposits = { #621
+		
+		icon = steel
+
+		highlight_states = {
+			state = 621
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 621
+			has_tech = excavation2
+		}
+
+		visible = {
+			has_completed_focus = JAP_develop_chinese_resources
+			621 = {
+				NOT = {
+					has_state_flag = suiyuan_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		complete_effect = {
+			621 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				set_state_flag = suiyuan_steel_developed
+			}
+		}	
+	}
+
+}
+
+JAP_protect_geacps = {
+	JAP_fortify_marshall_yap_gilber_nauru_islands = {
+		icon = generic_construction
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 633 
+				state = 725 
+				state = 639 
+				state = 797 
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 633
+			has_full_control_of_state = 725
+			has_full_control_of_state = 639
+			has_full_control_of_state = 797
+			num_of_civilian_factories_available_for_projects > 5
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 30
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			633 = { add_dynamic_modifier = { modifier = JAP_small_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			725 = { add_dynamic_modifier = { modifier = JAP_small_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			639 = { add_dynamic_modifier = { modifier = JAP_small_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			797 = { add_dynamic_modifier = { modifier = JAP_small_fortifications } }
+		}	
+	}
+	JAP_fortify_saipan_guam = {
+		icon = generic_construction
+		
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 646 
+				state = 638
+				state = 648
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 646
+			has_full_control_of_state = 638
+			has_full_control_of_state = 648
+			num_of_civilian_factories_available_for_projects > 10
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 35
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			646 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			638 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			639 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			hidden_effect = {
+				set_global_flag =  JAP_saipan_guam_marcus_fortificated
+			}
+		}	
+	}
+	JAP_fortify_american_islands = {
+		icon = generic_construction
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 631 
+				state = 630
+				state = 727
+				state = 632
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 631
+			has_full_control_of_state = 630
+			has_full_control_of_state = 727
+			has_full_control_of_state = 632
+			num_of_civilian_factories_available_for_projects > 10
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 35
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			631 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			630 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			727 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			632 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			hidden_effect = {
+				set_global_flag =  JAP_american_islands_fortificated
+			}
+		}	
+	}
+	JAP_fortify_fiji_tahiti_line = {
+		icon = generic_construction
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 636 
+				state = 726
+				state = 641
+				state = 643
+				state = 642
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 636
+			has_full_control_of_state = 726
+			has_full_control_of_state = 641
+			has_full_control_of_state = 643
+			has_full_control_of_state = 642
+			num_of_civilian_factories_available_for_projects > 10
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 35
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			636 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			726 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			641 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			643 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			642 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+
+		}	
+	}
+	JAP_fortify_solomon_new_caledonia_islands = {
+		icon = generic_construction
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 737 
+				state = 634
+				state = 635
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 737
+			has_full_control_of_state = 634
+			has_full_control_of_state = 635
+			num_of_civilian_factories_available_for_projects > 10
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 35
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			737 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			634 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+			custom_effect_tooltip = GDU_spacer
+			635 = { add_dynamic_modifier = { modifier = JAP_medium_fortifications } }
+		}	
+	}
+	JAP_fortify_iwojima_taiwan_okinawa = {
+		icon = generic_construction
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 645 
+				state = 526
+				state = 524
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 645
+			has_full_control_of_state = 526
+			has_full_control_of_state = 524
+			num_of_civilian_factories_available_for_projects > 15
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 40
+
+		modifier = {
+			civilian_factory_use = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			645 = {
+				add_dynamic_modifier = { modifier = JAP_big_fortifications }
+				set_building_level = {
+					type = coastal_bunker
+					level = 5
+					province = 2608
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 5451
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 1123
+				}
+			}
+			custom_effect_tooltip = GDU_spacer
+			526 = {
+				 add_dynamic_modifier = { modifier = JAP_big_fortifications }
+				 set_building_level = {
+					type = coastal_bunker
+					level = 5
+					province = 1035
+				}
+			} 
+			custom_effect_tooltip = GDU_spacer
+			524 = { add_dynamic_modifier = { modifier = JAP_big_fortifications } }
+			hidden_effect = {
+				set_global_flag = JAP_home_islands_fortificated
+			}
+		}	
+	}
+	JAP_fortify_hawaii = {
+		icon = generic_construction
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 629 
+			}
+		}
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_full_control_of_state = 629
+			num_of_civilian_factories_available_for_projects > 20
+		}
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 70
+		days_remove = 40
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		remove_effect = {
+			629 = {
+				add_dynamic_modifier = { modifier = JAP_big_fortifications } 
+				custom_effect_tooltip = GDU_spacer
+				set_building_level = {
+					type = air_base
+					level = 15
+				}
+				set_building_level = {
+					type = anti_air_building
+					level = 5
+				}
+				set_building_level = {
+					type = coastal_bunker
+					level = 7
+					province = 4180
+				}
+			}
+			hidden_effect = {
+				set_global_flag = JAP_hawaii_fortificated
+			}
+		}	
+	}
+}

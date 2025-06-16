@@ -1,0 +1,452 @@
+ideas = {
+	country = {		
+		SPA_attack_sov = {
+			picture = barbarossa
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+
+		SPA_winter_defence = {
+			picture = scuffed_acclim
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.075
+			}
+		}
+		
+		SPA_Army_destroyed = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = SOV_tankograd
+
+			equipment_bonus = {	
+				armor = {
+					instant = yes
+					build_cost_ic = 0.1
+				}							
+			}
+		}
+
+		SPA_distabilization_of_spain_1 = {
+			name = distabilization_of_spain_1
+			picture = distabilization_of_spain
+			allowed = {
+				original_tag = SPR
+				
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = -0.005
+				neutrality_drift = 0.03
+			}
+		}
+
+		SPA_strengthen_fascists_1 = {
+
+			picture = generic_fascism_drift_2
+			
+			modifier = {
+				fascism_drift = 0.1
+			}
+		}
+
+		SPA_divided_nation = {
+			name = SPA_divided_nation
+			picture = FRA_matignon_agreements
+			
+			allowed = {
+				original_tag = SPR
+				
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+				political_power_cost = 0.3
+			}
+		}
+
+		SPA_divided_nation_1 = {
+			name = SPA_divided_nation_2
+			picture = FRA_matignon_agreements
+			
+			allowed = {
+				original_tag = SPR
+				
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+				
+			}
+		}
+
+		SPA_divided_nation_2 = {
+			picture = FRA_matignon_agreements
+			
+			allowed = {
+				original_tag = SPR
+				
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				
+			}
+		}
+		
+		SPA_gold_reserve_idea = {
+			removal_cost = -1
+			picture = ger_mefo_bills
+			modifier = {
+				consumer_goods_expected_value = -0.05
+			}	          									
+	}		
+
+		SPA_Fascism_support = {
+			name = SPA_Fascism_support
+			picture = SPR_political_violence
+			
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = democratic
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				fascism_drift = 0.05
+			}
+		}
+
+		SPA_mechanized_bonus = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = SOV_tankograd
+
+			equipment_bonus = {	
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}							
+			}
+		}
+
+		SPA_recovering_from_civil_war = {
+			name = SPA_recovering_from_civil_war
+			picture = FRA_matignon_agreements
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				ai_get_ally_desire_factor = -200
+				ai_join_ally_desire_factor = -200
+				join_faction_tension = 0.5
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+			}
+			rule = {
+				can_decline_call_to_war = yes
+			}
+		}
+		SPA_resourcex = {
+			name = SPA_resourcex
+			picture = FRA_matignon_agreements
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.25
+			}
+		}
+		SPA_recovering_from_civil_war_2 = {
+			name = SPA_recovering_from_civil_war
+			picture = FRA_matignon_agreements
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				ai_get_ally_desire_factor = -200
+				ai_join_ally_desire_factor = -200
+				join_faction_tension = 0.5
+				industrial_capacity_factory = -0.14
+				industrial_capacity_dockyard = -0.14
+				production_speed_buildings_factor = -0.035
+			}
+			rule = {
+				can_decline_call_to_war = yes
+			}
+		}
+		SPA_recovering_from_civil_war_3 = {
+			name = SPA_recovering_from_civil_war
+			picture = FRA_matignon_agreements
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = -0.07
+				industrial_capacity_dockyard = -0.07
+				production_speed_buildings_factor = -0.02
+			}
+			rule = {
+				can_decline_call_to_war = yes
+			}
+		}
+		SPA_carlism_1 = {
+			name = SPA_carlism
+			picture = SPA_carlism
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = democratic
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = -0.003
+				
+			}
+		}
+		SPA_carlism_2 = {
+			name = SPA_carlism
+			picture = SPA_carlism
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = -0.001
+				neutrality_drift = 0.02
+			}
+		}
+		SPR_political_violence = {
+			picture = SPR_political_violence
+			allowed = {
+				original_tag = SPR
+				NOT = {
+					has_global_flag = spanish_civil_war
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.15
+			}
+		}
+		SPR_national_strikes_3 = {
+			# Default starter spirit
+			name = SPR_national_strikes
+			picture = FRA_factory_strikes
+			allowed = {
+				original_tag = SPR
+				NOT = {
+					has_global_flag = spanish_civil_war
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.2
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+			}
+		}
+		SPA_carlism_4 = {
+			name = SPA_carlism
+			picture = SPA_carlism
+			allowed = {
+				original_tag = SPR
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+			}
+		}
+		SPA_fascist_economic_aid = {
+			picture = generic_production_bonus
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		SPA_italian_shipbuilding_expertise = {
+			picture = generic_navy_bonus
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+			}
+		}
+		SPA_the_duty_to_work = {
+			picture = ger_mefo_bills
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		SPA_national_recovery_1 = {
+			name = SPA_national_recovery
+			picture = SPA_national_recovery
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = 0.002
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		SPA_national_recovery_4 = {
+			name = SPA_national_recovery
+			picture = SPA_national_recovery
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				offensive_war_stability_factor = 0.3
+			}
+		}
+		SPA_expand_the_axis_gold_trade = {
+			picture = ger_mefo_bills
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		SPA_a_methodical_approach = {
+			picture = CZE_planning_bonus
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				max_planning = 0.1
+			}
+		}
+	}
+	industrial_concern = {
+		Spanish_Oil = {
+			picture = generic_industrial_concern_1
+			allowed = {
+				original_tag = SPR
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+			traits = {
+				industrial_concern
+			}
+		}
+	}
+}
+
+		

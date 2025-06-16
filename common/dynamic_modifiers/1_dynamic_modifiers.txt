@@ -1,0 +1,200 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+
+###Sea Lion Score###
+sealion_score_modifier_spirit = {
+	enable = { always = yes }
+	icon = "GFX_sealion_score_modifier"
+	army_core_attack_factor = sealion_score_modifier
+	army_core_defence_factor = sealion_score_modifier
+}
+allied_afrika_modifier_spirit = {
+	enable = { always = yes }
+	icon = "GFX_goal_generic_position_armies"
+	ground_attack_factor = ENG.allied_afrika_modifier_bonus
+	amphibious_invasion_defence = ENG.allied_afrika_modifier_bonus
+        air_strategic_bomber_bombing_factor = ENG.allied_afrika_modifier_bonus
+        shore_bombardment_bonus = ENG.allied_afrika_shorebombardment_bonus
+}
+GER_defend_berlin = { #STATE MODIFIER
+    enable = { always = yes }
+    icon = GFX_modifiers_SOV_civilian_labor_in_defense
+    recruitable_population_factor = 0.03
+    army_core_defence_factor = 0.05
+    max_dig_in = 4
+    supply_factor = 0.08
+}
+GER_DDAY_Wall = {
+	icon = "GFX_goal_generic_position_armies"
+	dig_in_speed_factor = 0.5
+	max_dig_in_factor = 2.0	
+}
+no_fra_mainland_buildings = { # on Province
+	icon = "GFX_focus_ICE_the_armed_forces_of_iceland"
+	local_building_slots_factor = -2
+}
+FRA_Maginot_Line = {
+	icon = "GFX_idea_generic_wall_line"
+	#dig_in_speed_factor = 50.0
+	#max_dig_in_factor = 50.0
+	army_attack_factor = -0.99
+}
+axis_afrika_modifier_spirit = {
+	enable = { always = yes }
+	icon = "GFX_goal_generic_position_armies"
+	army_org_factor = GER.axis_afrika_modifier_bonus
+}
+
+soviet_afrika_modifier_spirit = {
+	enable = { always = yes }
+	icon = "GFX_goal_generic_position_armies"
+	ground_attack_factor = ENG.allied_afrika_modifier_bonus
+	army_core_defence_factor = SOV.soviet_afrika_defense_bonus
+}
+
+ITA_novus_ordo = {
+	enable = { always = yes  }
+	icon = GFX_modifiers_tur_kemalist_unrest
+	army_attack_factor = 0.25
+	army_defence_factor = 0.25
+}
+fallout_atomic = {
+	enable = { always = yes }
+	icon = GFX_modifiers_radiation
+	industry_repair_factor = -0.2
+	industry_free_repair_factor = -0.3
+	repair_speed_infrastructure_factor = -0.2
+	repair_speed_rail_way_factor = -0.15
+	local_resources_factor = -0.25
+	state_production_speed_buildings_factor = -0.25
+}
+refinery_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_oil_factor = -0.2
+} 
+refinery_critically_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_oil_factor = -0.3
+}
+refinery_lightly_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_oil_factor = -0.1
+}  
+tungsten_mine_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_tungsten_factor = -0.2
+} 
+tungsten_mine_critically_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_tungsten_factor = -0.3
+}
+tungsten_mine_lightly_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_tungsten_factor = -0.1
+}
+chromium_mine_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_chromium_factor = -0.2
+} 
+chromium_mine_critically_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_chromium_factor = -0.3
+}
+chromium_mine_lightly_damaged_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource	
+	state_resources_chromium_factor = -0.1
+}
+
+JAP_small_fortifications = {
+	enable = { always = yes }
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense	
+	max_dig_in_factor = 0.5
+	naval_invasion_penalty = 0.05
+}
+JAP_medium_fortifications = {
+	enable = { always = yes }
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense	
+	dig_in_speed_factor = 0.3
+	max_dig_in_factor = 0.75
+	naval_invasion_penalty = 0.1
+}
+JAP_big_fortifications = {
+	enable = { always = yes }
+	icon = GFX_modifiers_SOV_civilian_labor_in_defense	
+	dig_in_speed_factor = 0.3
+	max_dig_in_factor = 1.0	
+	naval_invasion_penalty = 0.15
+}
+
+
+###Great Patriotic War###
+great_patriotic_modifier_spirit = {
+	enable = { 
+		SOV = { has_war = yes }
+	}
+	remove_trigger = {
+		has_completed_focus = SOV_defense_of_moscow
+	}
+	icon = GFX_goal_sov_great_patriotic_war
+	
+	army_org_factor = SOV.great_patriotic_war_land_buff
+	army_morale_factor = SOV.great_patriotic_war_land_buff
+	
+	air_superiority_efficiency = SOV.great_patriotic_war_air_buff
+	air_escort_efficiency = SOV.great_patriotic_war_air_buff
+	air_intercept_efficiency = SOV.great_patriotic_war_air_buff
+}
+###Great Patriotic War END###
+SPA_blau_division_modifier = {
+	enable = { always = yes }
+
+	icon = GFX_idea_SPR_nationalist_remnants
+
+	army_morale_factor = SPA_army_morale_factor
+	army_org_factor = 0.05 
+	planning_speed = SPA_planning_speed
+	max_planning = SPA_max_planning
+	industrial_capacity_factory = SPA_industrial_capacity_factory
+	production_factory_efficiency_gain_factor = SPA_production_factory_efficiency_gain_factor
+	army_attack_factor = SPA_army_attack_factor
+}
+pathfinder_infiltration_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_FIN_motti_tactics_modifier	
+	disable_strategic_redeployment = yes 
+	no_supply_grace = 15
+	naval_invasion_penalty = -0.1
+}

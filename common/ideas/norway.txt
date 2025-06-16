@@ -1,0 +1,275 @@
+ideas = {
+
+hidden_ideas = { 
+	GDU_NOR_Cap = {
+	  available = { NOT = { surrender_progress > 0.25 }}
+	  on_remove = { GDU_script_norway_cap = yes }
+	}
+}
+
+	country = {
+		NOR_training = {
+			picture = FRA_army_of_aggression_focus
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 1000
+				training_time_factor = -0.5
+				consumer_goods_expected_value = -0.08
+			}
+		}
+		NOR_last_stand_idea = {
+			picture = generic_disjointed_gov
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+			}
+		}
+		NOR_no_surrender = {
+			picture = FRA_army_of_aggression_focus
+			modifier = {
+				surrender_limit = 1
+			}
+		}
+		NOR_recover_eff = {
+			picture = FRA_army_of_aggression_focus
+			modifier = {
+				production_factory_efficiency_gain_factor = 20
+			}
+		}
+		nor_bad_debuffs0 = {
+			picture = generic_disjointed_gov
+			modifier = {
+				army_core_attack_factor = -0.35
+				army_core_defence_factor = -0.35
+				war_support_factor = -0.05
+			}
+		}
+		nor_bad_debuffs2 = {
+			picture = chi_army_corruption
+			modifier = {
+				lend_lease_tension = 2
+				max_dig_in = -10
+				army_attack_factor = -0.8
+				army_defence_factor = -0.8
+				army_org_factor = -0.7
+				max_command_power = -40
+				command_power_gain_mult = -0.8
+				industrial_capacity_dockyard = -1.2
+				production_speed_naval_base_factor = -1.2
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				rocket_interceptor_equipment = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				medium_plane_fighter_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				medium_plane_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				transport_plane_equipment = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				cv_small_plane_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+				small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = 10
+				}
+			}
+			research_bonus = {
+				land_doctrine = -0.25
+			}
+		}
+		nor_bad_debuffs1 = {
+			picture = chi_army_corruption
+			modifier = {
+				max_dig_in = -10
+				army_attack_factor = -0.8
+				army_defence_factor = -0.8
+				army_org_factor = -0.7
+				max_command_power = -20
+			}
+		}
+		nor_bad_debuffs = {
+			picture = chi_army_corruption
+			modifier = {
+				max_dig_in = -10
+				army_attack_factor = -0.6
+				army_defence_factor = -0.6
+				army_org_factor = -0.6
+			}
+		}
+		nor_debuffs_aftercap = {
+			picture = chi_army_corruption
+			modifier = {
+				army_org_factor = -0.15
+				War_support_factor = -0.20
+				consumer_goods_expected_value = 0.2
+				industrial_capacity_factory = -0.2
+				conscription = 0.1
+			}
+			research_bonus = {
+				land_doctrine = -0.15
+			}
+		}
+		nor_debuffs_aftercap_1 = {
+			picture = chi_army_corruption
+			modifier = {
+				army_org_factor = -0.15
+				consumer_goods_expected_value = 0.2
+				industrial_capacity_factory = -0.2
+				conscription = 0.1
+			}
+			research_bonus = {
+				land_doctrine = -0.15
+			}
+		}
+		nor_debuffs_aftercap_2 = {
+			picture = chi_army_corruption
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				industrial_capacity_factory = -0.2
+				conscription = 0.1
+			}
+		}
+		nor_debuffs_aftercap_3 = {
+			picture = chi_army_corruption
+			modifier = {
+				industrial_capacity_factory = -0.1
+				conscription = 0.1
+			}
+		}
+		nor_debuffs_aftercap_4 = {
+			picture = chi_army_corruption
+			modifier = {
+				industrial_capacity_factory = 0.1
+				conscription = 0.1
+			}
+		}
+		NOR_spec_ops = {
+			picture = ast_volunteer_defence_corps
+			modifier = {
+				special_forces_training_time_factor = -0.3
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+			}
+		}
+		NOR_spec_ops_1 = {
+			picture = ast_volunteer_defence_corps
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+			}
+		}
+		NOR_spec_ops_2 = {
+			picture = ast_volunteer_defence_corps
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+			}
+		}
+		NOR_army_buffs = {
+			picture = generic_manpower_bonus
+			modifier = {
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		NOR_army_buffs2 = {
+			picture = generic_infantry_bonus
+			modifier = {
+				command_power_gain_mult = 0.2
+				training_time_factor = -0.2
+			}
+		}
+		NOR_crofter = {
+			picture = generic_victors_of_ww1
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				amphibious_invasion = 0.2
+			}
+		}
+		NOR_Unbreakable_will = {
+			picture = generic_victors_of_ww1
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				War_support_factor = 0.20
+				stability_factor = 0.20
+			}
+		}
+	}
+	industrial_concern = {
+		NOR_tandbergs_radiofabrikk = {
+			allowed = {
+				original_tag = NOR
+			}
+			research_bonus = {
+				electronics = 0.1
+			}
+			traits = {
+				electronics_concern
+			}
+		}
+		NOR_norsk_hydro = {
+			picture = generic_refining_concern_1
+			allowed = {
+				original_tag = NOR
+			}
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			traits = {
+				refinery_concern
+			}
+		}
+	}
+}

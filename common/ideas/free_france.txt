@@ -1,0 +1,138 @@
+ideas = {
+	country = {
+		FRA_FREE_army = {
+			picture = test
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.015
+				military_leader_cost_factor = 4
+				drift_defence_factor = 0.25
+				mobilization_laws_cost_factor = -0.25
+			}
+		}
+		FRA_Counter_Offensive = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = eng_chiefs_of_staff_committee
+			modifier = {
+				army_attack_factor = 0.075
+				army_defence_factor = 0.075
+			}
+		}
+		FRA_Spec_Ops = {
+			picture = ast_volunteer_defence_corps
+			modifier = {
+				special_forces_attack_factor = 0.07
+				special_forces_defence_factor = 0.07
+			}
+		}
+		FRA_Tank_Ops = {
+			picture = SOV_tankograd
+			modifier = {
+				army_armor_attack_factor = 0.04
+				army_armor_defence_factor = 0.04
+				motorized_attack_factor = 0.04
+				motorized_defence_factor = 0.04
+				mechanized_attack_factor = 0.04
+				mechanized_defence_factor = 0.04
+			}
+		}
+		FRA_Supply_System = {
+			picture = generic_build_infrastructure
+			allowed_civil_war = {
+			}
+			modifier = {
+				supply_consumption_factor = -0.075
+			}
+		}
+		FRA_expand_the_repair_yards = {
+			picture = generic_coastal_defense_ships
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				refit_ic_cost = -0.1
+				refit_speed = 0.1
+				repair_speed_factor = 0.1
+			}
+		}
+		FRA_rubber_refinery_program = {
+			picture = generic_goods_red_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.2
+			}
+		}
+		FRA_FREE_gold_reserves = {
+			picture = generic_foreign_capital
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				defensive_war_stability_factor = 0.2
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		FRA_FREE_viva_la_france = {
+			picture = FRA_scw_intervention_republicans_focus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+		FRA_FREE_colonial_manpower = {
+			picture = generic_army_war_college
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.25
+				conscription = 0.02
+			}
+		}
+	}
+}

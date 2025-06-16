@@ -1,0 +1,378 @@
+ideas = {
+	country = {
+		victor_emmanuel = {
+			picture = ITVictor
+			allowed = {
+				original_tag = "ITA"
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = ITA
+						has_government = fascism
+					}
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.2
+			}
+		}
+		GER_Pact_of_Steel_GER = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = ger_mefo_bills
+			targeted_modifier = {
+				tag = ITA
+				trade_cost_for_target_factor = -0.5
+			}
+		}
+		GER_Pact_of_Steel_ITA = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = ger_mefo_bills
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+		}
+		Mass_Produced_Equipment = {
+			picture = smallarms_factory
+			allowed = {
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.125
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.075
+					instant = yes
+				}
+				anti_air_equipment = {
+					instant = yes
+					build_cost_ic = -0.075
+				}
+				anti_tank_equipment = {
+					instant = yes
+					build_cost_ic = -0.075
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.075
+					instant = yes
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.05
+				}							
+			}
+		}
+		ITA_Dockyards_Expansion = {
+			picture = generic_navy_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_dockyard_factor = 0.2
+			}
+		}
+		ITA_Victory_in_Mediterranean = {
+			allowed = {
+				always = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_navy_bonus
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.1
+					instant = yes
+					armor_value = 0.05
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.1
+					instant = yes
+					armor_value = 0.05
+				}
+			}
+		}
+		Duce_Supremo = {
+			picture = vittoria_mutilata
+			allowed = {
+				original_tag = "ITA"
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = ITA
+						has_government = fascism
+					}
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.35
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		ITA_Def_AFR_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = vittoria_mutilata
+			modifier = {
+				army_attack_factor = 0.075
+				army_defence_factor = 0.075
+			}
+		}
+		ITA_Def_AFR_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = vittoria_mutilata
+			modifier = {
+				stability_factor = 0.35
+				production_speed_buildings_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		ITA_Def_AFR_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = vittoria_mutilata
+			modifier = {
+				army_core_attack_factor = 0.35
+				army_core_defence_factor = 0.35
+			}
+		}
+		ITA_Command = {
+			picture = german_advisors
+			allowed = {
+				original_tag = "ITA"
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = ITA
+						has_government = fascism
+					}
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.1
+				#training_time_factor = -0.1
+				max_planning = 0.05
+			}
+		}
+		ITA_Guerra_Santa = {
+			allowed = {
+				original_tag = "ITA"
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_wall_line
+			modifier = {
+				production_speed_bunker_factor = 0.15
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		ITA_Corpo_dei_Marines = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_navy_bonus
+			equipment_bonus = {
+				ship_hull_light = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				convoy = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		ITA_Blackshirts = {
+			picture = Waffen_SS
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		ITA_Younger_Generation = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription_factor = 0.05
+				training_time_factor = 0.05
+			}
+		}
+		vittoria_mutilata = {
+			allowed = {
+				original_tag = "ITA"
+			}
+			removal_cost = -1
+			modifier = {
+				communism_acceptance = -10
+				democratic_acceptance = -10
+				fascism_acceptance = 10
+				ai_focus_aggressive_factor = 0.5
+				training_time_factor = -0.15
+				research_speed_factor = 0.15
+			}
+			research_bonus = {
+				naval_equipment = 0.1
+				naval_doctrine = 0.1
+			}
+		}
+		vittoria_mutilata_moreresourcestomarket = {
+			picture = vittoria_mutilata
+			allowed = {
+				original_tag = "ITA"
+			}
+			removal_cost = -1
+			modifier = {
+				communism_acceptance = -10
+				democratic_acceptance = -10
+				fascism_acceptance = 10
+				ai_focus_aggressive_factor = 0.5
+				training_time_factor = -0.15
+				research_speed_factor = 0.15
+				min_export = 0.05
+			}
+			research_bonus = {
+				naval_equipment = 0.1
+				naval_doctrine = 0.1
+			}
+		}
+		vittoria_mutilata_lessresourcestomarket = {
+			picture = vittoria_mutilata
+			allowed = {
+				original_tag = "ITA"
+			}
+			removal_cost = -1
+			modifier = {
+				communism_acceptance = -10
+				democratic_acceptance = -10
+				fascism_acceptance = 10
+				ai_focus_aggressive_factor = 0.5
+				training_time_factor = -0.15
+				research_speed_factor = 0.15
+				min_export = -0.05
+			}
+			research_bonus = {
+				naval_equipment = 0.1
+				naval_doctrine = 0.1
+			}
+		}
+		ITA_german_millitary_cooperation_focus = {
+			picture = german_advisors
+			allowed = {
+				original_tag = ITA
+			}
+			allowed_civil_war = {
+				OR = {
+					AND = {
+						has_government = fascism
+						GER = {
+							has_government = fascism
+						}
+					}
+					#AND = {
+					#	has_government = communsim
+					#	GER = {
+					#		has_government = communsim
+					#	}
+					#}
+					#AND = {
+					#	has_government = democratic
+					#	GER = {
+					#		has_government = democratic
+				}
+			}
+			removal_cost = -1
+			research_bonus = {
+				land_doctrine = 0.1
+				air_doctrine = 0.1
+			}
+		}
+	}
+	industrial_concern = {
+		danieli = {
+			allowed = {
+				original_tag = ITA
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+			traits = {
+				industrial_concern
+			}
+		}
+	}
+}

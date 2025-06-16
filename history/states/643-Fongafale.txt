@@ -1,0 +1,32 @@
+
+state={
+	id=643
+	name="STATE_643"
+	manpower=493
+	state_category = small_island
+	resources={
+		oil = 1
+		steel = 5
+	}
+
+	history={
+		owner = ENG
+		1936.1.1.13 = {
+			owner = SWE
+		}
+		buildings = {
+			948 = {
+				naval_base = 1
+			}
+			960 = {
+				naval_base = 1
+			}
+			infrastructure = 2
+		}
+
+	}
+
+	provinces={
+		960 950 948 947 
+	}
+}

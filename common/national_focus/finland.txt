@@ -1,0 +1,1521 @@
+focus_tree = {
+	id = finnish_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = FIN
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = FIN_stockpile_rations
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 0
+		cost = 10
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+
+        	random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FIN_finnish_army
+		icon = GFX_focus_FIN_suomen_maavoimat
+		x = 19
+		y = 0
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			111 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			146 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = FIN_eastern_defense
+		icon = GFX_focus_generic_fortify_finland
+		prerequisite = {focus = FIN_finnish_army}
+		relative_position_id = FIN_finnish_army
+		x = 3
+		y = 1
+		cost = 10
+		completion_reward = {
+	        add_ideas = FIN_mannerheim_legacy_idea
+	        add_tech_bonus = {
+				name = POL_prepare_for_the_next_war
+				bonus = 1.00 
+				uses = 1
+				category = land_doctrine
+			}
+		}
+    }
+	focus = {
+		id = FIN_the_red_wall
+		icon = "GFX_Noras_mannerheim_line"
+		prerequisite = { focus = FIN_eastern_defense }
+		relative_position_id = FIN_eastern_defense
+        available = {
+			FIN = {
+				controls_state = 150
+			}
+            FIN = {
+				controls_state = 146
+			}
+		}
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			# Soviet border
+            111 = {
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6186
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6082
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 52
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 4044
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3061
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 204
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6877
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 165
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 7007
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 7
+						province = 3979
+						instant_build = yes
+					}					
+				}
+			}
+            150 = {
+                custom_effect_tooltip = FIN_savofort
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 7
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6134
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3073
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3131
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 139
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3030
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6878
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 6210
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 7019
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 3185
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 37
+						instant_build = yes
+					}					
+				}
+			}
+		}
+	}
+	focus = {
+		id = FIN_the_lotta_svard
+		icon = GFX_goal_generic_special_forces
+        prerequisite = { focus = FIN_the_red_wall }
+		relative_position_id = FIN_the_red_wall
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {	111 = {	is_owned_by = FIN }	}
+
+		bypass = {
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = POL_anti_air_guns
+				bonus = 0.75 
+				uses = 3
+				category = cat_anti_air
+			}
+		}
+	}
+
+    focus = {
+		id = FIN_civilian_kitchens
+		icon = GFX_focus_SWE_rations
+		prerequisite = { focus = FIN_the_lotta_svard }
+		relative_position_id = FIN_the_lotta_svard
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			date > 1940.1.1
+		}
+		completion_reward = {
+			add_ideas = civilian_kitchens_idea
+			111 = {
+				add_extra_state_shared_building_slots = 10
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = FIN_prepare_for_winter
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = FIN_stockpile_rations }
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			111 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			146 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+    focus = {
+		id = FIN_invest_in_the_private_sector
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = FIN_prepare_for_winter }
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			111 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			146 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+    focus = {
+		id = FIN_prepare_for_war
+        prerequisite = { focus = FIN_stockpile_rations }
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			111 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			146 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+    focus = {
+		id = FIN_develop_the_war_machine
+        prerequisite = { focus = FIN_prepare_for_war }
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 2
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+						111 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			146 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+    focus = {
+		id = FIN_nokia
+		icon = GFX_focus_research
+		prerequisite = { focus = FIN_develop_the_war_machine}
+        prerequisite = { focus = FIN_invest_in_the_private_sector}
+		x = 1
+		y = 4
+		cost = 10
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+    
+
+    focus = {
+		id = FIN_expand_the_mines
+		icon = GFX_focus_generic_mining_industry
+		prerequisite = { focus = FIN_invest_in_the_private_sector }
+		available = { FIN = { controls_state = 148 }}
+
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 30
+				state = 148
+			}
+            add_resource = {
+				type = chromium
+				amount = 6
+				state = 148
+			}
+            add_resource = {
+				type = tungsten
+				amount = 14
+				state = 722
+			}
+            add_resource = {
+				type = steel
+				amount = 15
+				state = 722
+			}
+
+		}
+	}
+
+
+    
+	focus = {
+		id = FIN_ski_infantry
+		icon = GFX_focus_generic_winter_warfare
+		prerequisite = {focus = FIN_finnish_army}
+		relative_position_id = FIN_finnish_army
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			army_experience = 100
+			add_tech_bonus = {
+				name = POL_standardisation_of_equipment
+				bonus = 1.00 
+				uses = 1
+				category = infantry_weapons
+			}
+            
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.00 
+				uses = 1
+				technology = shocktroops
+				technology = shocktroops2
+			}
+		}
+	}
+	focus = {
+		id = FIN_promote_sisu
+		icon = GFX_focus_FIN_the_cold_front
+		prerequisite = { focus = FIN_ski_infantry }
+		relative_position_id = FIN_ski_infantry
+		x = 0
+		y = 2
+		cost = 10
+		completion_reward = {
+            add_ideas = FIN_white_guard_idea
+
+			
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.00 
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = FIN_winter_war_exp
+		icon = GFX_focus_SWE_neither_death_nor_dishonor 
+		prerequisite = { focus = FIN_promote_sisu }
+		prerequisite = { focus = FIN_the_red_wall }
+		prerequisite = { focus = FIN_import_tanks }
+		relative_position_id = FIN_promote_sisu
+		available = {
+			has_completed_focus = FIN_winter_war
+		}
+		x = 0
+		y = 2
+		cost = 10
+		completion_reward = {
+			army_experience = 250
+			air_experience = 100
+			
+			add_tech_bonus = {
+				name = POL_prepare_for_the_next_war
+				bonus = 1.00 
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+    focus = {
+		id = FIN_frantic_planning
+		icon = GFX_focus_FIN_motti_tactics
+		prerequisite = { focus = FIN_winter_war_exp }
+		relative_position_id = FIN_winter_war_exp
+		x = -2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+	        add_ideas = FIN_motitus_tactics
+			add_tech_bonus = {
+				name = POL_prepare_for_the_next_war
+				bonus = 1.00 
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+    focus = {
+		id = FIN_anti_tank_training
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = FIN_winter_war_exp }
+		relative_position_id = FIN_winter_war_exp
+		x = 2
+		y = 1
+		cost = 10
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = POL_anti_tank_guns
+				bonus = 0.75 
+				uses = 4
+				category = cat_anti_tank
+			}
+			
+			add_tech_bonus = {
+				name = POL_arty_guns
+				bonus = 0.75 
+				uses = 4
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = POL_rocarty_guns
+				bonus = 0.75 
+				uses = 4
+				category = rocketry
+			}
+		}
+	}
+	
+
+    
+	
+	focus = {
+		id = FIN_jaegers
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		prerequisite = { focus = FIN_winter_war_exp }
+		relative_position_id = FIN_winter_war_exp
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.00 
+				uses = 2
+				technology = jaegers
+				technology = jaegers2
+				technology = jaegers3
+			}
+		}
+	}
+	focus = {
+		id = FIN_saami
+		icon = GFX_focus_FIN_utilize_the_sami
+		prerequisite = { focus = FIN_jaegers }
+		relative_position_id = FIN_jaegers
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = POL_standardisation_of_equipment
+				bonus = 1.00 
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = special_bonus
+				bonus = 1.00
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
+	focus = {
+		id = FIN_victorious_march
+		icon = GFX_focus_FIN_dreams_of_expansionism
+		prerequisite = { focus = FIN_saami }
+		relative_position_id = FIN_saami
+		available = {
+			has_completed_focus = FIN_victory_leningrad
+		}
+		x = 0
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_timed_idea = {
+				idea = FIN_victorious_march
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = FIN_oy_alkoholiliike
+		icon = GFX_focus_FIN_oy_alkoholiliike
+		prerequisite = { focus = FIN_anti_tank_training }
+		relative_position_id = FIN_anti_tank_training
+		x = 0
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			hidden_effect = {			
+				set_technology = {
+					molotov_cocktails_tech = 1	
+				}
+			}
+			custom_effect_tooltip = FIN_oy_alkoholiliike_ns_tt
+		}
+	}
+
+	
+
+
+	
+	focus = {
+		id = FIN_cautious_politics
+		icon = GFX_focus_FIN_finnish_neutrality
+
+		x = 8
+		y = 0
+		cost = 10
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = neutrality_idea } }
+				add_ideas = neutrality_idea
+			}
+			add_political_power = 200
+		}
+	}
+
+	focus = {
+		id = FIN_domestic_politics
+		icon = GFX_focus_SWE_urbanization
+		prerequisite = {focus = FIN_cautious_politics}
+		relative_position_id = FIN_cautious_politics
+
+		x = -3
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = FIN_ban_communism
+		icon = GFX_focus_SWE_attack_landsorganisationen
+		prerequisite = {focus = FIN_domestic_politics}
+		relative_position_id = FIN_domestic_politics
+
+		x = -1
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = FIN_communism_banned
+		}
+	}
+	focus = {
+		id = FIN_ban_fascism
+		icon = GFX_focus_FIN_right_wing_policies
+		prerequisite = {focus = FIN_domestic_politics}
+		relative_position_id = FIN_domestic_politics
+
+		x = 1
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = FIN_fascism_banned
+		}
+	}
+	focus = {
+		id = FIN_for_the_fatherland
+		icon = GFX_focus_FIN_a_cry_for_help_2
+		prerequisite = {focus = FIN_ban_fascism focus = FIN_ban_communism}
+		relative_position_id = FIN_ban_fascism
+
+		x = -1
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_ideas = FIN_for_the_fatherland
+		}
+	}
+
+	focus = {
+		id = FIN_deterrence
+		icon = GFX_focus_generic_full_employment
+		prerequisite = { focus = FIN_cautious_politics }
+		relative_position_id = FIN_cautious_politics
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_ideas = FIN_deterrence
+		}
+	}
+	focus = {
+		id = FIN_build_slots
+		icon = GFX_focus_generic_railroad
+		prerequisite = { focus = FIN_deterrence }
+		relative_position_id = FIN_deterrence
+		x = 0
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		
+		completion_reward = {
+			111 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			149 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			150 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+		
+	}
+
+	focus = {
+		id = FIN_pacifist_sentiment
+		icon = GFX_focus_EST_national_pride_in_finland
+		prerequisite = {focus = FIN_cautious_politics }
+		relative_position_id = FIN_cautious_politics
+		available = {
+		}
+
+		continue_if_invalid = yes
+
+		x = 3
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_ideas = why_we_fight_focus
+		}
+	}
+	focus = {
+		id = FIN_winter_war
+		icon = GFX_focus_FIN_antagonize_the_soviets
+		prerequisite = {focus = FIN_pacifist_sentiment }
+		relative_position_id = FIN_pacifist_sentiment
+		available = {
+			OR = {
+				threat > 0.5
+				has_defensive_war = yes
+			}
+		}
+
+		continue_if_invalid = yes
+
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_stability = -0.15
+			add_war_support = 0.20
+		}
+	}
+	focus = {
+		id = FIN_call_mannerheim
+		icon = GFX_focus_FIN_strengthen_military_administration
+		prerequisite = {focus = FIN_winter_war }
+		relative_position_id = FIN_winter_war
+		available = {
+		}
+
+		continue_if_invalid = yes
+
+		x = 1
+		y = 1
+		cost = 10
+		completion_reward = {
+			create_country_leader = {
+				name = "Carl G. Mannerheim"
+				desc = "POLITICS_CAROL_II_DESC"
+				picture = GFX_portrait_fin_carl_mannerheim
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					FIN_dictator
+					FIN_our_defender
+				}
+				id = 550
+			}
+		}
+	}
+	focus = {
+		id = FIN_imitate_sweden
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = {focus = FIN_winter_war}
+		relative_position_id = FIN_winter_war
+		x = -1
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = FIN_german_factories
+		icon = GFX_focus_generic_german_trade
+		prerequisite = {focus = FIN_imitate_sweden}
+		prerequisite = {focus = FIN_build_slots}
+		relative_position_id = FIN_winter_war
+		x = -3
+		y = 2
+		cost = 10
+		completion_reward = {
+			146 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = FIN_military_necessity
+		icon = GFX_focus_research
+		prerequisite = { focus = FIN_german_factories }
+		relative_position_id = FIN_german_factories
+		available = {
+
+		}
+		cancel_if_invalid = no
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+
+	
+	focus = {
+		id = FIN_tuli_isku
+		icon = GFX_focus_SWE_let_fly_all_guns
+		prerequisite = { focus = FIN_finnish_army }
+		relative_position_id = FIN_finnish_army
+		x = -3
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.25 
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FIN_limited_motorization
+		icon = GFX_focus_generic_truck
+		#bypass = { has_tech = motorised_infantry }
+		prerequisite = {focus = FIN_tuli_isku}
+		relative_position_id = FIN_tuli_isku
+		x = 1
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0 
+				technology = motorised_infantry
+			}
+		}
+	}
+	
+	focus = {
+		id = FIN_import_tanks
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = FIN_limited_motorization focus = FIN_further_artillery_support }
+		relative_position_id = FIN_limited_motorization
+
+		x = -1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = tank_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_medium_tank_chassis
+				technology = improved_heavy_tank_chassis
+			}
+			custom_effect_tooltip = FIN_gwtank
+		}
+	}
+
+    focus = {
+		id = FIN_study_foreign_vehicles
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = FIN_import_tanks }
+		relative_position_id = FIN_import_tanks
+		x = -1
+		y = 1
+		cost = 10
+		completion_reward = {
+			army_experience = 100
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+   
+
+
+    focus = {
+		id = FIN_further_artillery_support
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FIN_tuli_isku }
+		relative_position_id = FIN_tuli_isku
+		x = -1
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+   	
+
+    focus = {
+		id = FIN_theft_and_learning
+		icon = GFX_focus_FIN_salvaged_and_retooled
+		prerequisite = { focus = FIN_study_foreign_vehicles }
+		relative_position_id = FIN_study_foreign_vehicles
+
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+			completion_reward = {
+
+
+         add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0 
+				uses = 1
+				technology = advanced_medium_tank_chassis
+				technology = advanced_heavy_tank_chassis
+				technology = advanced_light_tank_chassis
+			}
+		}
+
+	}
+
+   	focus = {
+		id = FIN_aviation_effort
+		icon = GFX_focus_FIN_suomen_ilmavoimat
+		x = 25
+		y = 0
+		cost = 10
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.00 
+				uses = 1
+				category = air_doctrine
+			}
+		}
+
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.00 
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+       focus = {
+		id = FIN_paratroopers_and_air_bases
+		icon = GFX_focus_generic_air_bases
+		prerequisite = { focus = FIN_aviation_effort }
+		relative_position_id = FIN_aviation_effort
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ITA_marines_and_landing_craft
+				bonus = 1.00 
+				uses = 1
+               		 technology = paratroopers
+				technology = paratroopers2
+			}
+
+            if = {
+				limit = {
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+		}
+	}
+
+
+   	focus = {
+		id = FIN_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FIN_aviation_effort }
+		relative_position_id = FIN_aviation_effort
+
+		mutually_exclusive = { focus = FIN_bomber_focus }
+		x = -1
+		y = 2
+		cost = 10
+		completion_reward = {
+        #custom_effect_tooltip = FIN_fighter
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.00 
+				uses = 1
+				technology = improved_small_airframe
+				technology = improved_medium_airframe
+			}
+		}
+	}
+
+	focus = {
+		id = FIN_bomber_focus
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = FIN_aviation_effort }
+		relative_position_id = FIN_aviation_effort
+		mutually_exclusive = { focus = FIN_fighter_focus }
+		x = 1
+		y = 2
+		cost = 10
+		completion_reward = {
+			#custom_effect_tooltip = FIN_bomber
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.00 
+				uses = 1
+				technology = aa_cannon_1
+			}
+		}
+	}
+
+   	focus = {
+		id = FIN_aviation_effort_2
+		icon = GFX_focus_generic_copy_plane_designs
+		prerequisite = { focus = FIN_bomber_focus focus = FIN_fighter_focus }
+		relative_position_id = FIN_fighter_focus
+		x = 1
+		y = 1
+		cost = 10
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.00 
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.00 
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FIN_victory_leningrad
+		icon = GFX_focus_FIN_integrate_kola_and_karelia
+		prerequisite = { focus = FIN_imitate_sweden }
+		relative_position_id = FIN_imitate_sweden
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		cancel_if_invalid = yes
+		available = {
+			NOT = {
+				SOV = {
+					controls_state = 195			
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			FIN = { add_ideas = GDU_victory_leningrad }
+			swap_ideas = {
+				remove_idea = sisu
+				add_idea = sisu2
+			}
+			148 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 30
+					instant_build = yes
+				}
+			}
+			set_technology = { airfield_construction = 1 }			
+		}
+	}
+
+	
+	
+	focus = {
+		id = FIN_PP
+		icon = GFX_focus_ITA_banda_carita
+		prerequisite = { focus = FIN_call_mannerheim }
+		relative_position_id = FIN_call_mannerheim
+		available = {
+			has_war = yes
+		}
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_ideas = FIN_militarized_society
+		}
+	}
+
+
+}

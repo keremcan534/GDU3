@@ -1,0 +1,17 @@
+version="0.0.1"
+tags={
+	"Gameplay"
+	"Historical"
+	"National Focuses"
+	"Map"
+	"Technologies"
+	"Utilities"
+	"Graphics"
+	"Events"
+	"Balance"
+	"Fixes"
+}
+name="ICgras"
+picture="tole.png"
+supported_version="1.16.5"
+path="C:/Users/Kerem/Documents/Paradox Interactive/Hearts of Iron IV/mod/Rules"

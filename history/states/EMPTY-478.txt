@@ -1,0 +1,13 @@
+state={
+id=478
+name="STATE_GDU_478"
+manpower = 1
+state_category = wasteland
+history={
+		owner = SOV
+}
+provinces={
+7968
+}
+impassable = yes
+}

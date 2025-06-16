@@ -1,0 +1,459 @@
+#INTERNAL FACTIONS
+#### ##     ## ########   #######  
+##  ###   ### ##     ## ##     ## 
+##  #### #### ##     ## ##     ## 
+##  ## ### ## ########  ##     ## 
+##  ##     ## ##   ##   ##     ## 
+##  ##     ## ##    ##  ##     ## 
+#### ##     ## ##     ##  #######  
+BUL_macedonian_revolutionary_organizations = {
+	BUL_repress_imro_propaganda = {
+		priority = 10
+		icon = GFX_decision_eng_propaganda_campaigns
+		ai_will_do = {
+			base = 10
+		}
+		allowed = {
+			original_tag = BUL
+		}
+		available = {
+			NOT = {
+				has_country_flag = BUL_macedonian_affairs_ongoing_flag
+			}
+		}
+		days_remove = 50
+		fire_only_once = yes
+		visible = {
+			has_completed_focus = BUL_condemn_macedonian_organizations
+			has_civil_war = no
+		}
+		cost = 50
+		complete_effect = {
+			set_country_flag = BUL_macedonian_affairs_ongoing_flag
+			set_country_flag = {
+				flag = BUL_repress_imro_flag
+				value = 1
+			}
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = BUL_imro_01
+				add_idea = BUL_imro_02
+			}
+			clr_country_flag = BUL_macedonian_affairs_ongoing_flag
+		}
+	}
+	BUL_repress_imro_persecute_activists = {
+		priority = 9
+		icon = GFX_decision_generic_police_action
+		ai_will_do = {
+			base = 10
+		}
+		allowed = {
+			original_tag = BUL
+		}
+		available = {
+			NOT = {
+				has_country_flag = BUL_macedonian_affairs_ongoing_flag
+			}
+		}
+		days_remove = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = {
+				flag = BUL_repress_imro_flag
+				value = 1
+			}
+			has_civil_war = no
+		}
+		cost = 50
+		complete_effect = {
+			set_country_flag = BUL_macedonian_affairs_ongoing_flag
+			set_country_flag = {
+				flag = BUL_repress_imro_flag
+				value = 2
+			}
+            add_offsite_building = { type = arms_factory level = 1 }
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = BUL_imro_02
+				add_idea = BUL_imro_03
+			}
+			clr_country_flag = BUL_macedonian_affairs_ongoing_flag
+		}
+	}
+	BUL_repress_imro_destroy_organization = {
+		priority = 8
+		icon = GFX_decision_oppression
+		allowed = {
+			original_tag = BUL
+		}
+		available = {
+			NOT = {
+				has_country_flag = BUL_macedonian_affairs_ongoing_flag
+			}
+		}
+		days_remove = 50
+		fire_only_once = yes
+		visible = {
+			has_country_flag = {
+				flag = BUL_repress_imro_flag
+				value = 2
+			}
+			owns_state = 212
+			owns_state = 48
+		}
+		cancel_effect = {
+			clr_country_flag = BUL_macedonian_affairs_ongoing_flag
+		}
+		cost = 50
+		complete_effect = {
+			set_country_flag = BUL_macedonian_affairs_ongoing_flag
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+		remove_effect = {
+			clr_country_flag = BUL_macedonian_affairs_ongoing_flag
+			set_country_flag = {
+				flag = BUL_repress_imro_flag
+				value = 3
+			}
+			remove_ideas = BUL_imro_03
+			add_stability = 0.1
+			add_political_power = 70
+		}
+	}
+		BUL_purchase_infantry_equipment = {
+		priority = 10
+		icon = generic_industry
+		allowed = {
+		}
+		#Activated from effect
+		available = {
+			NOT = {
+				has_idea = BUL_imro_01
+				has_idea = BUL_imro_02
+				has_idea = BUL_imro_03
+			}
+		}
+		visible = {
+			date > 1936.1.1
+			NOT = {
+				has_idea = BUL_imro_01
+				has_idea = BUL_imro_02
+				has_idea = BUL_imro_03
+			}
+		}
+		cost = 50
+		days_remove = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0.1
+		}
+			complete_effect = {
+				set_country_flag = BUL_purchasing_infantry_equipment_flag
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+		}
+	BUL_purchase_artillery = {
+		priority = 9
+		icon = ger_military_buildup
+		allowed = {
+			always = no
+		}
+		#Activated from effect
+		available = {
+				has_country_flag = BUL_purchasing_infantry_equipment_flag
+		}
+		visible = {
+		}
+		cost = BUL_purchase_equipment_cost
+		days_remove = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0.1
+		}
+		complete_effect = {
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+	}
+}
+
+########  ########    ###    ########  ##     ##    ###    ##     ## ######## ##    ## ######## 
+##     ## ##         ## ##   ##     ## ###   ###   ## ##   ###   ### ##       ###   ##    ##    
+##     ## ##        ##   ##  ##     ## #### ####  ##   ##  #### #### ##       ####  ##    ##    
+########  ######   ##     ## ########  ## ### ## ##     ## ## ### ## ######   ## ## ##    ##    
+##   ##   ##       ######### ##   ##   ##     ## ######### ##     ## ##       ##  ####    ##    
+##    ##  ##       ##     ## ##    ##  ##     ## ##     ## ##     ## ##       ##   ###    ##    
+##     ## ######## ##     ## ##     ## ##     ## ##     ## ##     ## ######## ##    ##    ##    
+BUL_rearmament = {
+	BUL_refuse_army_restrictions = {
+		icon = GFX_decision_generic_break_treaty
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 100
+				has_government = fascism
+			}
+		}
+		allowed = {
+			original_tag = BUL
+		}
+		available = {
+			has_completed_focus = BUL_negotiate_bulgarian_rearmament
+		}
+		fire_only_once = yes
+		visible = {
+			has_idea = BUL_army_restrictions
+		}
+		cost = 15
+		complete_effect = {
+			clr_country_flag = BUL_rearmament_negotiations_ongoing_flag
+			remove_ideas = BUL_army_restrictions
+			if = {
+				limit = {
+					has_country_flag = BUL_rearmament_flag
+				}
+				clr_country_flag = BUL_rearmament_flag
+			}
+			set_country_flag = BUL_refused_arms_restrictions_flag
+		}
+	}
+}
+
+#### ##    ## ########  ##     ##  ######  ######## ########  ####    ###    ##       
+##  ###   ## ##     ## ##     ## ##    ##    ##    ##     ##  ##    ## ##   ##       
+##  ####  ## ##     ## ##     ## ##          ##    ##     ##  ##   ##   ##  ##       
+##  ## ## ## ##     ## ##     ##  ######     ##    ########   ##  ##     ## ##       
+##  ##  #### ##     ## ##     ##       ##    ##    ##   ##    ##  ######### ##       
+##  ##   ### ##     ## ##     ## ##    ##    ##    ##    ##   ##  ##     ## ##       
+#### ##    ## ########   #######   ######     ##    ##     ## #### ##     ## ######## 
+BUL_foreign_agreements = {
+	BUL_appoint_tsankov = {
+		priority = 100
+		icon = GFX_decision_generic_speech
+		ai_will_do = {
+			base = 0
+		}
+		allowed = {
+			original_tag = BUL
+		}
+		available = {
+			has_country_flag = BUL_nsm_integrated_flag
+		}
+		visible = {
+			has_government = fascism
+			NOT = {
+				has_country_leader = {
+					name = "Aleksandar Tsankov"
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			retire_ideology_leader = fascism
+			set_party_name = {
+				ideology = fascism
+				long_name = BUL_national_social_movement_party_long
+				name = BUL_national_social_movement_party
+			}
+			create_country_leader = {
+				name = "Aleksandar Tsankov"
+				desc = "POLITICS_BOGDAN_FILOV_DESC"
+				picture = GFX_portrait_bul_aleksandar_tsankov
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+					the_bloody_professor
+				}
+			}
+		}
+	}
+	BUL_appoint_georgiev = {
+		priority = 100
+		icon = GFX_decision_generic_speech
+		ai_will_do = {
+			base = 0
+		}
+		allowed = {
+			original_tag = BUL
+		}
+		available = {
+			has_country_flag = BUL_zveno_integrated_flag
+		}
+		visible = {
+			has_government = communism
+			NOT = {
+				has_country_leader = {
+					name = "Kimon Georgiev"
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			retire_ideology_leader = communism
+			create_country_leader = {
+				name = "Kimon Georgiev"
+				desc = "POLITICS_KIMON_GEORGIEV_DESC"
+				picture = GFX_portrait_bul_kimon_georgiev
+				expire = "1965.1.1"
+				ideology = anti_revisionism
+				traits = {
+					old_coup_maker
+					hardened_officer
+				}
+			}
+		}
+	}
+}
+
+#######  ######## ##     ## ######## ########  
+##     ##    ##    ##     ## ##       ##     ## 
+##     ##    ##    ##     ## ##       ##     ## 
+##     ##    ##    ######### ######   ########  
+##     ##    ##    ##     ## ##       ##   ##   
+##     ##    ##    ##     ## ##       ##    ##  
+#######     ##    ##     ## ######## ##     ## 
+BUL_negotiate_claims_in_the_balkans = {
+	BUL_demand_our_historical_claims = {
+		icon = hol_draw_up_staff_plans
+		ai_will_do = {
+			base = 800
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		available = {
+		}
+		visible = {
+			has_completed_focus = BUL_approach_germany
+			country_exists = GER
+			NOT = {
+				has_war_with = GER
+			}
+			GER = {
+				has_capitulated = no
+				is_subject = no
+			}
+			any_state = {
+				has_state_flag = BUL_historical_bulgarian_claim_flag
+				controller = {
+					OR = {
+						tag = GER
+						AND = {
+							NOT = {
+								is_in_faction_with = GER
+							}
+							NOT = {
+								tag = BUL
+							}
+						}
+					}
+				}
+			}
+		}
+		cost = 75
+		fire_only_once = yes
+		complete_effect = {
+			GER = {
+				country_event = {
+					id = bftb_bulgarian_claims.1
+					hours = 1
+				}
+			}
+		}
+	}
+}
+
+BUL_bulgarisation_of_the_balkans = {
+	BUL_bulgarisation_campaing = {
+		icon = GFX_decision_generic_nationalism
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				FROM = {
+					has_state_flag = BUL_historical_bulgarian_claim_flag
+				}
+			}
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				add = 0.1
+				OR = {
+					has_government = fascism
+					has_country_leader = {
+						name = "Ferdinand I"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		state_target = yes
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+				BUL_is_balkan_state = yes
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		available = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+			has_manpower > 999
+			command_power > 14
+		}
+		visible = {
+			has_completed_focus = BUL_bulgarisation_of_the_balkans
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+				any_neighbor_state = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		cost = 35
+		days_remove = 70
+		complete_effect = {
+			FROM = {
+				set_state_flag = BUL_bulgarisation_campaign_flag
+			}
+			add_manpower = -1000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			add_command_power = -15
+		}
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+	}
+}
+
+########   #######  ##       #### ######## ####  ######     ###    ##          ##       ########    ###    ########  ######## ########   ######  
+##     ## ##     ## ##        ##     ##     ##  ##    ##   ## ##   ##          ##       ##         ## ##   ##     ## ##       ##     ## ##    ## 
+##     ## ##     ## ##        ##     ##     ##  ##        ##   ##  ##          ##       ##        ##   ##  ##     ## ##       ##     ## ##       
+########  ##     ## ##        ##     ##     ##  ##       ##     ## ##          ##       ######   ##     ## ##     ## ######   ########   ######  
+##        ##     ## ##        ##     ##     ##  ##       ######### ##          ##       ##       ######### ##     ## ##       ##   ##         ## 
+##        ##     ## ##        ##     ##     ##  ##    ## ##     ## ##          ##       ##       ##     ## ##     ## ##       ##    ##  ##    ## 
+##         #######  ######## ####    ##    ####  ######  ##     ## ########    ######## ######## ##     ## ########  ######## ##     ##  ######  

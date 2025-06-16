@@ -1,0 +1,54 @@
+on_actions = { 
+# ROOT is capitulated country, FROM is winner
+
+	on_ruling_party_change = {
+		# Change 3D Models based on ideology
+		effect = {
+			if = {
+				limit = {
+					original_tag = BUL
+				}
+				if = {
+					limit = {
+						has_government = fascism
+						has_idea = BUL_bogdan_filov
+					}
+					remove_ideas = BUL_bogdan_filov
+					add_ideas = BUL_bogdan_filov_fascism
+				}
+				else_if = {
+					limit = {
+						has_government = neutrality
+						has_idea = BUL_bogdan_filov_fascism
+					}
+					remove_ideas = BUL_bogdan_filov_fascism
+					add_ideas = BUL_bogdan_filov
+				}
+			}
+		}
+	}
+
+	on_monthly_BUL = {
+		effect = {
+			# BULGARIAN CLAIMS IN THE BALKANS
+			if = {
+				limit = {
+					has_global_flag = BUL_germany_recognizes_bulgarian_claims_flag
+					is_in_faction_with = GER
+					any_state = {
+						has_state_flag = BUL_bulgarian_claim_warranted_flag
+						OR = {
+							is_controlled_by = GER
+							controller = {
+								is_in_faction_with = GER
+								NOT = { tag = BUL }
+							}
+						}
+					}
+				}
+				country_event = bftb_bulgarian_claims.4
+			}
+		}
+
+	}
+}

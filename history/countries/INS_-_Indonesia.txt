@@ -1,0 +1,36 @@
+﻿capital = 335 #Jakarta
+
+# Starting tech
+# clone of Holland
+set_research_slots = 0
+add_ideas = { 
+	benelux_neutrality
+	disloyal_puppet_idea
+	free_trade
+}
+
+set_convoys = 25
+set_popularities = {
+	democratic = 10
+	fascism = 10
+	communism = 30
+	neutrality = 50
+}
+
+create_country_leader = {
+	name = "Sukarno"
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
+	expire = "1953.3.1"
+	ideology = socialism #Marhaenism his own unique mix of stuff
+	traits = {
+		
+	}
+}
+
+set_cosmetic_tag = INS_HOL # Netherlands East Indies
+
+add_ideas = {
+	GDU_neutrality
+}
+

@@ -1,0 +1,15 @@
+state={
+id=322
+name="STATE_322"
+manpower = 1
+state_category = wasteland
+	history={
+		##
+}
+provinces={
+		4559
+		8006
+		8008
+		
+}
+}

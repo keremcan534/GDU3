@@ -1,0 +1,903 @@
+technologies = {
+	
+	iw_small_airframe = {
+		enable_equipment_modules = {
+			#recon_camera
+			engine_1_1x
+			non_strategic_materials_small
+			high_octane_fuel_small
+			light_mg_2x
+			light_mg_4x
+		}
+		
+		enable_subunits = {
+			infantry
+		}
+
+		enable_equipments = {
+			small_plane_airframe_0
+			small_plane_cas_airframe_0
+			small_plane_naval_bomber_airframe_0
+			small_plane_suicide_airframe_0
+			cv_small_plane_airframe_0
+			cv_small_plane_cas_airframe_0
+			cv_small_plane_naval_bomber_airframe_0
+			cv_small_plane_suicide_airframe_0
+		}
+		
+	
+		path = {
+			leads_to_tech = basic_small_airframe
+			research_cost_coeff = 1
+		}
+		
+		
+		research_cost = 2
+		start_year = 1926
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			cas_bomber
+			naval_air
+			naval_bomber
+			air_equipment 
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_cas_and_modules
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+	
+	
+	
+	basic_small_airframe = {
+
+		enable_equipments = {
+			small_plane_airframe_1
+			small_plane_cas_airframe_1
+			small_plane_naval_bomber_airframe_1
+			small_plane_suicide_airframe_1
+			cv_small_plane_airframe_1
+			cv_small_plane_cas_airframe_1
+			cv_small_plane_naval_bomber_airframe_1
+			cv_small_plane_suicide_airframe_1
+		}
+		enable_equipment_modules = {
+			engine_2_1x
+			heavy_mg_2x
+			heavy_mg_4x
+			lmg_defense_turret
+			#lmg_defense_turret_2x
+		}
+		
+		path = {
+			leads_to_tech = improved_small_airframe
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1936
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			cas_bomber
+			naval_air
+			naval_bomber
+			air_equipment 
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_cas_and_modules
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+	
+	
+	
+	improved_small_airframe = {
+		enable_equipment_modules = {
+			engine_3_1x
+			aircraft_cannon_1_1x
+			aircraft_cannon_1_2x
+			hmg_defense_turret
+			#hmg_defense_turret_2x
+		}
+		enable_equipments = {
+			small_plane_airframe_2
+			small_plane_cas_airframe_2
+			small_plane_naval_bomber_airframe_2
+			small_plane_suicide_airframe_2
+			cv_small_plane_airframe_2
+			cv_small_plane_cas_airframe_2
+			cv_small_plane_naval_bomber_airframe_2
+			cv_small_plane_suicide_airframe_2
+		}
+	
+		path = {
+			leads_to_tech = advanced_small_airframe
+			research_cost_coeff = 1
+		}
+		research_cost = 2
+		start_year = 1940
+		allow = { 
+			date > 1938.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 6 }
+		}
+
+		
+		categories = {
+			light_air
+			light_fighter
+			cas_bomber
+			naval_air
+			naval_bomber
+			air_equipment 
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_cas_and_modules
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	
+	}
+	
+	advanced_small_airframe = {
+
+		enable_equipments = {
+			small_plane_airframe_3
+			small_plane_cas_airframe_3
+			small_plane_naval_bomber_airframe_3
+			small_plane_suicide_airframe_3
+			cv_small_plane_airframe_3
+			cv_small_plane_cas_airframe_3
+			cv_small_plane_naval_bomber_airframe_3
+			cv_small_plane_suicide_airframe_3
+			
+		}
+		
+		path = {
+			leads_to_tech = modern_small_airframe
+			research_cost_coeff = 1
+		}
+		enable_equipment_modules = {
+			engine_4_1x
+			aircraft_cannon_2_1x
+			aircraft_cannon_2_2x
+			cannon_defense_turret
+			#cannon_defense_turret_2x
+		}
+		research_cost = 2
+		start_year = 1944
+		allow = { 
+			date > 1942.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 8 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			cas_bomber
+			naval_air
+			naval_bomber
+			air_equipment 
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_cas_and_modules
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+	
+	modern_small_airframe = {
+
+		enable_equipments = {
+			small_plane_airframe_4
+			small_plane_cas_airframe_4
+			small_plane_naval_bomber_airframe_4
+			small_plane_suicide_airframe_4
+			cv_small_plane_airframe_4
+			cv_small_plane_cas_airframe_4
+			cv_small_plane_naval_bomber_airframe_4
+			cv_small_plane_suicide_airframe_4			
+		}
+
+		dependencies = {
+			jet_engines = 1
+		}
+		
+		research_cost = 2
+		start_year = 1945
+		allow = { 
+			date > 1943.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 12 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			cas_bomber
+			air_equipment 
+			naval_air
+			naval_bomber
+			jet_technology
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_cas_and_modules
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+	
+	iw_medium_airframe = {
+		enable_equipment_modules = {
+			engine_1_2x
+			non_strategic_materials_medium
+			high_octane_medium
+			light_mg_2x
+			light_mg_4x
+			small_bomb_bay
+		}
+		
+		enable_equipments = {
+			medium_plane_airframe_0
+			medium_plane_fighter_airframe_0
+			medium_plane_scout_plane_airframe_0
+		}
+
+		path = {
+			leads_to_tech = basic_medium_airframe
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1926
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = 2 }
+		}
+		
+		categories = {
+			medium_air
+			tactical_bomber
+			cat_heavy_fighter
+			air_equipment 
+			mio_cat_all_medium_aircraft_and_modules
+		}
+	}
+	
+	basic_medium_airframe = {
+
+		enable_equipments = {
+			medium_plane_airframe_1
+			medium_plane_fighter_airframe_1
+			medium_plane_scout_plane_airframe_1
+		}
+			enable_equipment_modules = {
+			engine_2_2x
+			heavy_mg_2x
+			heavy_mg_4x
+			lmg_defense_turret_2x
+			medium_bomb_bay
+		}
+		
+		path = {
+			leads_to_tech = improved_medium_airframe
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = 4 }
+		}
+		
+		categories = {
+			medium_air
+			tactical_bomber
+			cat_heavy_fighter
+			air_equipment 
+			mio_cat_all_medium_aircraft_and_modules
+		}
+	}
+	
+	improved_medium_airframe = {
+		enable_equipment_modules = {
+			engine_3_2x
+			aircraft_cannon_1_1x
+			aircraft_cannon_1_2x
+			hmg_defense_turret_2x
+		}
+		enable_equipments = {
+			medium_plane_airframe_2
+			medium_plane_fighter_airframe_2
+			medium_plane_scout_plane_airframe_2
+		}
+	
+		path = {
+			leads_to_tech = advanced_medium_airframe
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1940
+		allow = { 
+			date > 1938.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = 6 }
+		}
+		
+		categories = {
+			medium_air
+			tactical_bomber
+			cat_heavy_fighter
+			air_equipment 
+			mio_cat_all_medium_aircraft_and_modules
+		}
+	}
+	
+	advanced_medium_airframe = {
+
+		enable_equipments = {
+			medium_plane_airframe_3
+			medium_plane_fighter_airframe_3
+			medium_plane_scout_plane_airframe_3
+		}
+		
+		path = {
+			leads_to_tech = modern_medium_airframe
+			research_cost_coeff = 1
+		}
+		enable_equipment_modules = {
+			engine_4_2x
+			aircraft_cannon_2_1x
+			aircraft_cannon_2_2x
+			cannon_defense_turret_2x
+		}
+		research_cost = 2
+		start_year = 1944
+		allow = { 
+			date > 1942.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = 8 }
+		}
+		
+		categories = {
+			medium_air
+			tactical_bomber
+			cat_heavy_fighter
+			air_equipment 
+			mio_cat_all_medium_aircraft_and_modules
+		}
+	}
+	
+	modern_medium_airframe = {
+
+		enable_equipments = {
+			medium_plane_airframe_4
+			medium_plane_fighter_airframe_4
+			medium_plane_scout_plane_airframe_4
+		}
+		
+		dependencies = {
+			jet_engines = 1
+		}
+
+		research_cost = 2
+		start_year = 1945
+		allow = { 
+			date > 1943.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = 12 }
+		}
+		
+		categories = {
+			medium_air 
+			jet_technology
+			cat_heavy_fighter
+			tactical_bomber
+			mio_cat_all_medium_aircraft_and_modules
+		}
+	}
+
+	iw_large_airframe = {
+		enable_equipment_modules = {
+			engine_1_4x
+			large_bomb_bay
+		}
+		
+		enable_equipments = {
+			large_plane_airframe_0
+			large_plane_maritime_patrol_plane_airframe_0
+		}
+	
+		path = {
+			leads_to_tech = basic_large_airframe
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1926
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		categories = {
+			heavy_air
+			air_equipment 
+			cat_strategic_bomber
+			mio_cat_all_heavy_aircraft_and_modules
+		}
+	}
+	
+	basic_large_airframe = {
+
+		enable_equipments = {
+			large_plane_airframe_1
+			large_plane_maritime_patrol_plane_airframe_1
+		}
+			enable_equipment_modules = {
+			engine_2_4x
+		}
+		
+		path = {
+			leads_to_tech = improved_large_airframe
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		categories = {
+			heavy_air
+			air_equipment 
+			cat_strategic_bomber
+			mio_cat_all_heavy_aircraft_and_modules
+		}		
+	}
+	
+	improved_large_airframe = {
+		enable_equipment_modules = {
+			engine_3_4x
+		}
+		enable_equipments = {
+			large_plane_airframe_2
+			large_plane_maritime_patrol_plane_airframe_2
+		}
+	
+		path = {
+			leads_to_tech = advanced_large_airframe
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1940
+		allow = { 
+			date > 1938.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 6 }
+		}
+		
+		categories = {
+			heavy_air
+			air_equipment 
+			cat_strategic_bomber
+			mio_cat_all_heavy_aircraft_and_modules
+		}
+	}
+	
+	advanced_large_airframe = {
+
+		enable_equipments = {
+			large_plane_airframe_3
+			large_plane_maritime_patrol_plane_airframe_3
+		}
+				enable_equipment_modules = {
+			engine_4_4x
+		}
+		path = {
+			leads_to_tech = modern_large_airframe
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1944
+		allow = { 
+			date > 1942.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 8 }
+		}
+		
+		categories = {
+			heavy_air
+			air_equipment 
+			cat_strategic_bomber
+			mio_cat_all_heavy_aircraft_and_modules
+		}
+	}
+	
+	modern_large_airframe = {
+
+		enable_equipments = {
+			large_plane_airframe_4
+			large_plane_maritime_patrol_plane_airframe_4
+		}
+		
+		research_cost = 2
+		start_year = 1945
+		allow = { 
+			date > 1943.1.1
+		}
+		dependencies = {
+			jet_engines = 1
+		}
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 0 y = 12 }
+		}
+		
+		categories = {
+			heavy_air 
+			jet_technology
+			cat_strategic_bomber
+			mio_cat_all_heavy_aircraft_and_modules
+		}
+	}
+
+	early_bombs = {
+
+		enable_equipment_modules = {
+			#tank_buster_1
+			#light_mg_2x
+			#light_mg_4x
+			#lmg_defense_turret
+			#lmg_defense_turret_2x
+			bomb_locks
+		}
+
+		research_cost = 2
+		start_year = 1922
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 5 y = 2 }
+		}
+
+		path = {
+			leads_to_tech = heavy_bombs
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = air_torpedoe_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = survivability_studies
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = range_improvements
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			air_equipment 
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+	survivability_studies = {
+
+		enable_equipment_modules = {
+			self_sealing_fuel_tanks_small
+			self_sealing_fuel_tanks_medium
+			armor_plate_small
+			armor_plate_medium
+			floats
+			flying_boat_medium
+			dive_brakes_small
+		}
+		
+		research_cost = 2
+		start_year = 1936
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 2 y = 4 }
+		}
+
+		categories = {
+			air_equipment 
+			plane_modules_tech
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+	heavy_bombs = {
+
+		enable_equipment_modules = {
+			#heavy_mg_2x
+			#heavy_mg_4x
+			#hmg_defense_turret
+			#hmg_defense_turret_2x
+			armor_piercing_bomb_locks
+		}
+	
+		research_cost = 2 
+		start_year = 1936
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 4 y = 4 } 
+		}
+		path = {
+			leads_to_tech = aa_cannon_1
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			air_equipment 
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+	aa_cannon_1 = {
+
+		enable_equipment_modules = {
+			#aircraft_cannon_1_1x
+			#aircraft_cannon_1_2x
+			tank_buster_1
+		}
+		
+		research_cost = 2
+		start_year = 1940
+		allow = { 
+			date > 1938.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 4 y = 6 }
+		}
+		path = {
+			leads_to_tech = aa_cannon_2
+			research_cost_coeff = 1
+		}
+		categories = {
+			air_equipment 
+			plane_modules_tech
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+	aa_cannon_2 = {
+
+		enable_equipment_modules = {
+			#aircraft_cannon_2_1x
+			#aircraft_cannon_2_2x
+			#cannon_defense_turret
+			#cannon_defense_turret_2x
+			tank_buster_2
+		}
+		
+		research_cost = 2
+		start_year = 1944
+		allow = { 
+			date > 1942.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 4 y = 8 }
+		}
+
+		categories = {
+			air_equipment 
+			plane_modules_tech 
+			cat_air_guns
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+	
+	air_torpedoe_1 = {
+		enable_equipment_modules = {
+			torpedo_mounting
+		}
+			
+		research_cost = 2
+		start_year = 1936
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 6 y = 4 }
+		}
+
+		path = {
+			leads_to_tech = air_torpedoe_2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+	air_torpedoe_2 = {
+		enable_equipment_modules = {
+			torpedo_mounting_2
+		}
+			
+		research_cost = 2
+		start_year = 1940
+		allow = { 
+			date > 1938.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 6 y = 6 }
+		}
+
+		path = {
+			leads_to_tech = air_torpedoe_3
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+	air_torpedoe_3 = {
+		enable_equipment_modules = {
+			torpedo_mounting_3
+		}
+			
+		research_cost = 2
+		start_year = 1944
+		allow = { 
+			date > 1942.1.1
+		}
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 6 y = 8 }
+		}
+
+		categories = {
+			air_equipment
+			plane_modules_tech
+			cat_air_bombs
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+
+	range_improvements = {
+
+		enable_equipment_modules = {
+			fuel_tanks_small
+			fuel_tanks_medium
+			drop_tanks
+		}
+		
+		research_cost = 2
+		start_year = 1936
+
+		folder = {
+			name = bba_air_techs_folder
+			position = { x = 8 y = 4 }
+		}
+
+		categories = {
+			air_equipment 
+			plane_modules_tech
+			mio_cat_all_light_fighter_and_modules
+			mio_cat_all_cas_and_modules
+			mio_cat_all_naval_bomber_and_modules
+			mio_cat_all_medium_aircraft_and_modules
+			mio_cat_all_heavy_aircraft_and_modules
+			mio_cat_all_light_aircraft_and_modules
+		}
+	}
+
+
+	suicide_charge = {
+		enable_equipment_modules = {
+			fixed_explosive_charge
+		}
+		research_cost = 2.5 #Carrier Variant
+		start_year = 1944
+		allow = { 
+			date > 1942.1.1
+		}
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+		################
+	}
+	
+	da_zero ={
+		enable_equipments = {
+			cv_small_plane_airframe_2
+		}
+		enable_equipment_modules = {
+			engine_3_1x
+		}
+				research_cost = 2.5 #Carrier Variant
+		start_year = 1944
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+	}
+}

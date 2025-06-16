@@ -1,0 +1,2511 @@
+focus_tree = {
+	id = new_zealander_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = NZL
+			has_dlc = "Together for Victory"
+		}
+
+		#modifier = {
+		#	add = 10
+		#	original_tag = NZL
+		#	has_dlc = "Together for Victory"
+		#}
+	}
+
+
+
+
+
+	############################
+	###### NAVY SECTION ########
+	############################
+
+	focus = {
+		id = NZL_royal_Navy
+		icon = GFX_Noras_cockatoo_shipyards
+		x = 7
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}			
+			}
+			navy_experience = 250
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {	
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}		
+			}				
+			navy_experience = 250
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = NZL_navy_spending
+		icon = GFX_usa_fund_navy
+		relative_position_id = NZL_royal_Navy
+		x = -2
+		y = 1
+		prerequisite = { focus = NZL_royal_Navy }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+
+		}
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {	
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}			
+			}	
+		}
+	}
+
+	focus = {
+		id = NZL_Radar
+		icon = GFX_naval_radar
+		relative_position_id = NZL_navy_spending
+		x = 0
+		y = 1
+		prerequisite = { focus = NZL_navy_spending }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+
+		}
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {	
+		723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		add_tech_bonus = {
+				uses = 2
+				bonus = 1.0
+				category = radar_tech
+			}	
+		}
+	}
+	
+	focus = {
+		id = NZL_protect_convoy
+		icon = GFX_goal_AST_state_of_RAN
+		prerequisite = { focus = NZL_royal_Navy }
+		
+		x = 0
+		y = 1
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		723 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			723 = {
+				add_resource = {
+					type = tungsten
+					amount = 5
+				}
+			}
+			723 = {
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1.5
+				uses = 2
+				category = cl_tech
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_doctrine
+		icon = GFX_AST_Dock
+		prerequisite = { focus = NZL_royal_Navy }
+		x = 2
+		y = 1
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}			
+			}				
+			add_tech_bonus = {
+				bonus = 1.00
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_destr
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = NZL_protect_convoy }
+		x = 0
+		y = 2
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}				
+			add_tech_bonus = {
+				bonus = 1.00
+				ahead_reduction = 0.5
+				uses = 2
+				category = dd_tech
+			}		
+		}
+	}
+
+	focus = {
+		id = NZL_royal_submarine_service
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = NZL_doctrine }
+		x = 2
+		y = 2
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}				
+			add_tech_bonus = {
+				bonus = 2.00
+				ahead_reduction = 0.5
+				uses = 1
+				technology = improved_ship_hull_submarine
+			}			
+		}
+	}
+
+	focus = {
+		id = NZL_naval_patrol
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = NZL_royal_submarine_service focus = NZL_destr focus = NZL_Radar }
+		x = 0
+		y = 3
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = GDU_Commonwealth_Navy_Manpower1	
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			723 = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_lessons_naval_war
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = NZL_naval_patrol }
+		x = 0
+		y = 4
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {		
+			723 = {
+				add_resource = {
+					type = steel
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}						
+			add_tech_bonus = {
+				bonus = 1.00
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = NZL_dock
+		icon = GFX_AST_Dock
+		prerequisite = { focus = NZL_lessons_naval_war focus = NZL_pacific_area_navy focus = NZL_Heavy_ships }
+		x = 0
+		y = 1
+		relative_position_id = NZL_lessons_naval_war
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+		723 = {
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}
+		723 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}			
+		}
+	}
+	focus = {
+		id = NZL_pacific_area_navy
+		icon = GFX_goal_base_strike
+		prerequisite = { focus = NZL_naval_patrol }
+		x = 2
+		y = 4
+		relative_position_id = NZL_royal_Navy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		723 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}
+		 add_tech_bonus = {
+				bonus = 1.5
+				uses = 1
+				category = cv_tech
+			}
+			add_tech_bonus = {
+				bonus = 1.00
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = NZL_fleet_coop
+		icon = GFX_usa_amphib
+		relative_position_id = NZL_pacific_area_navy
+		x = 0
+		y = 1
+		prerequisite = { focus = NZL_pacific_area_navy }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+
+		}
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {	
+		add_tech_bonus = {
+				name = NZL_USMC
+				bonus = 1.00
+				uses = 1
+				category = tp_tech
+			}	
+		}
+	}
+	focus = {
+		id = NZL_Heavy_ships
+		icon = GFX_america_goal_navy
+		relative_position_id = NZL_naval_patrol
+		x = -2
+		y = 1
+		prerequisite = { focus = NZL_naval_patrol }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+
+		}
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {	
+		723 = {
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}
+		add_tech_bonus = {
+				name = NZL_cruisers
+				bonus = 1.00
+				uses = 1
+				category = bb_tech
+			}	
+		}
+	}
+	focus = {
+		id = NZL_guns
+		icon = GFX_ITA_Dominance
+		relative_position_id = NZL_Heavy_ships
+		x = 0
+		y = 1
+		prerequisite = { focus = NZL_Heavy_ships }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+
+		}
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {	
+		723 = {
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}				
+			}
+		add_tech_bonus = {
+				name = NZL_cruisers
+				bonus = 1.00
+				uses = 2
+				category = ship_modules_tech
+			}		
+		}
+	}
+
+
+	############################
+	####### AIR SECTION ########
+	############################
+
+	focus = {
+		id = NZL_expand_the_nzpaf
+		icon = GFX_goal_generic_air_doctrine
+		x = 12
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+		set_technology = { survivability_studies = 1 }
+		set_technology = { heavy_bombs = 1 }
+			
+		}
+	}
+
+	focus = {
+		id = NZL_form_the_rnzaf
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = NZL_expand_the_nzpaf }
+		x = 0
+		y = 1
+		relative_position_id = NZL_expand_the_nzpaf
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			air_experience = 25
+			random_state = {
+				limit = {
+					has_state_flag = NZL_expand_the_nzpaf_AB
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = NZL_expand_the_nzpaf
+				bonus = 1.00 
+				uses = 2
+				category = air_doctrine
+			}
+		}
+
+		completion_reward = {
+			air_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = NZL_expand_the_nzpaf_AB
+			}
+			add_tech_bonus = {
+				name = NZL_expand_the_nzpaf
+				bonus = 1.00 
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_fighter_focus
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = NZL_form_the_rnzaf }
+		
+		x = 1
+		y = 2
+		relative_position_id = NZL_expand_the_nzpaf
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_fighter_focus
+				bonus = 1.5
+				uses = 1
+				technology = improved_small_airframe
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_bomber_focus
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = NZL_form_the_rnzaf }
+		
+		x = -1
+		y = 2
+		relative_position_id = NZL_expand_the_nzpaf
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_technology = { basic_medium_airframe = 1 }
+		}
+	}
+
+	focus = {
+		id = NZL_heavy_bombers_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = NZL_fighter_focus }
+		prerequisite = { focus = NZL_new_zealand_aluminium }
+		x = 2
+		y = 3
+		relative_position_id = NZL_expand_the_nzpaf
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_heavy_bombers
+				bonus = 0.5  
+				uses = 2
+				technology = basic_large_airframe
+				technology = improved_large_airframe
+			}
+			284 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_domestic_arms_industry_AF
+			}
+		}
+	}
+
+
+	############################
+	##### INDUSTRY SECTION #####
+	############################
+
+	focus = {
+		id = NZL_national_roads_board
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 19
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			284 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_national_roads_board_Inf1
+			}
+
+			723 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_national_roads_board_Inf2
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_new_zealand_steel
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = NZL_national_roads_board }
+		x = -3
+		y = 1
+		relative_position_id = NZL_national_roads_board
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			controls_state = 284
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			284 = {
+				add_resource = {
+					type = steel
+					amount = 35
+				}
+			}
+		}
+	}
+	focus = {
+		id = NZL_new_zealand_aluminium
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = NZL_new_zealand_steel }
+		x = -1
+		y = 1
+		relative_position_id = NZL_new_zealand_steel
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			controls_state = 284
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			284 = {
+				add_resource = {
+					type = aluminium
+					amount = 35
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_taranaki_oil
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = NZL_national_roads_board }
+		x = 0
+		y = 1
+		relative_position_id = NZL_national_roads_board
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			controls_state = 284
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			284 = {
+				add_resource = {
+					type = oil
+					amount = 20
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_wairarapa_sheep_farms
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = NZL_national_roads_board }
+		x = 3
+		y = 1
+		relative_position_id = NZL_national_roads_board
+
+		cost = 5
+
+
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_wairarapa_sheep_farms
+		}
+	}
+	focus = {
+		id = NZL_Military_uniform_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = NZL_wairarapa_sheep_farms }
+		x = 1
+		y = 1
+		relative_position_id = NZL_wairarapa_sheep_farms
+
+		cost = 5
+
+	
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			
+		}
+
+		completion_reward = {
+			284 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_domestic_arms_industry_AF
+			}
+		}
+	}
+	focus = {
+		id = NZL_central_department_of_industry
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = NZL_new_zealand_steel }
+		x = -2
+		y = 2
+		relative_position_id = NZL_national_roads_board
+
+		cost = 5
+
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_bureau_of_industry_IC1
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_bureau_of_industry
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = NZL_taranaki_oil }
+		x = 0
+		y = 2
+		relative_position_id = NZL_national_roads_board
+
+		cost = 5
+
+		
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_bureau_of_industry_IC1
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_department_of_scientific_and_industrial_research
+		icon = GFX_focus_research
+		prerequisite = { focus = NZL_bureau_of_industry }
+		prerequisite = { focus = NZL_central_department_of_industry }
+		x = -1
+		y = 3
+		relative_position_id = NZL_national_roads_board
+
+		cost = 10
+
+		
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = NZL_industrial_conscription
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = NZL_wairarapa_sheep_farms }
+		x = -1
+		y = 1
+		relative_position_id = NZL_wairarapa_sheep_farms
+
+		cost = 5
+
+		
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_industrial_conscription_AF
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_think_big
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = NZL_industrial_conscription } 
+		prerequisite = { focus = NZL_bureau_of_industry } 
+		x = 1
+		y = 3
+		relative_position_id = NZL_national_roads_board
+
+		cost = 10
+
+		
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+		}
+
+		completion_reward = {
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_think_big_IC1
+			}
+			284 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_think_big_AF
+			}
+		}
+	}
+	focus = {
+		id = NZL_Engineer
+		icon = GFX_Generic_Working_Women
+		prerequisite = { focus = NZL_think_big }
+		x = 1
+		y = 1
+		relative_position_id = NZL_think_big
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+		date > 1940.06.01
+		}
+
+		completion_reward = {
+		Add_ideas = AST_Engineer
+		}
+
+		}
+	focus = {
+		id = NZL_project_seal
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = NZL_department_of_scientific_and_industrial_research }
+		x = -2
+		y = 4
+		relative_position_id = NZL_national_roads_board
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_project_seal
+				bonus = 1.00 
+				uses = 2
+				category = nuclear
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_expand_the_university_of_auckland
+		icon = GFX_Noras_Auckland
+		prerequisite = { focus = NZL_think_big }
+		prerequisite = { focus = NZL_department_of_scientific_and_industrial_research }
+		x = 0
+		y = 4
+		relative_position_id = NZL_national_roads_board
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+
+	############################
+	####### ARMY SECTION #######
+	############################
+	focus = {
+		id = NZL_creation_army
+		icon = GFX_AST_solgier
+		x = 29
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = NZL_army_reforms
+				bonus = 1 
+				uses = 1
+				category = cat_special_forces_generic
+			}
+			set_technology = { tech_special_forces = 1 }
+		}
+	}
+	focus = {
+		id = NZL_army_reforms
+		icon = GFX_ENG_General_staff
+		prerequisite = { focus = NZL_creation_army }
+		x = 0
+		y = 1
+		relative_position_id = NZL_creation_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = NZL_army_reforms
+				bonus = 1 
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = NZL_charlton_automatic_rifle
+		icon = GFX_ENG_new_Rifle
+		prerequisite = { focus = NZL_army_reforms }
+		x = -2
+		y = 1
+		relative_position_id = NZL_army_reforms
+
+		cost = 5
+
+	
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_charlton_automatic_rifle
+				bonus = 1.00
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = NZL_Quality_first
+		icon = GFX_AST_Promote
+		prerequisite = { focus = NZL_army_reforms }
+		x = 4
+		y = 1
+		relative_position_id = NZL_army_reforms
+
+		cost = 10
+		
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+		add_tech_bonus = {
+				name = NZL_army_reforms
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		add_tech_bonus = {
+				name = NZL_army_reforms
+				bonus = 1 
+				uses = 2
+				category = cat_special_forces_generic
+			}
+		add_tech_bonus = {
+				name = NZL_army_reforms
+				bonus = 1.00
+				uses = 2
+				category = artillery
+			}
+
+		}
+	}
+	focus = {
+		id = NZL_Development_special_forces
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = NZL_charlton_automatic_rifle } 
+		prerequisite = { focus = NZL_bob_semple_tank }
+		x = -1
+		y = 1
+		relative_position_id = NZL_charlton_automatic_rifle
+
+		cost = 10
+
+	
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_charlton_automatic_rifle
+				bonus = 1.50 
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = NZL_artillery_focus
+				bonus = 1.50 
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_bob_semple_tank
+		icon = GFX_focus_NZL_bob_semple_tank		#VEHICLE OF GLORIOUS DESIGN BOB SEMPLE TANK MUST HAVE UNIQUE ICON
+		prerequisite = { focus = NZL_army_reforms }
+		x = -4
+		y = 1
+		relative_position_id = NZL_army_reforms
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_bob_semple_tank
+			add_tech_bonus = {
+				name = NZL_bob_semple_tank
+				bonus = 1.00 
+				uses = 1
+				technology = basic_light_tank_chassis
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_domestic_arms_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = NZL_army_reforms }
+		x = 0
+		y = 1
+		relative_position_id = NZL_army_reforms
+
+		cost = 5
+
+	
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			284 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			284 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = NZL_domestic_arms_industry_AF
+			}
+		}
+	}
+	focus = {
+		id = NZL_Ordering_from_UK_companies
+		icon = GFX_AST_Prepare_for_defense
+		prerequisite = { focus = NZL_domestic_arms_industry }
+		prerequisite = { focus = NZL_charlton_automatic_rifle }
+		x = -1
+		y = 1
+		relative_position_id = NZL_domestic_arms_industry
+
+		cost = 5
+
+	
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			
+		}
+
+		completion_reward = {
+		add_offsite_building = { type = arms_factory level = 2 }
+		}
+	}
+	focus = {
+		id = NZL_long_range_patrol
+		icon = GFX_AST_Coop
+		prerequisite = { focus = NZL_domestic_arms_industry } 
+		prerequisite = { focus = NZL_equipment_improvement } 
+		x = 1
+		y = 1
+		relative_position_id = NZL_domestic_arms_industry
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_long_range_patrol
+				bonus = 1.00 
+				uses = 2
+				category = tp_tech
+			}
+		}
+	}
+	focus = {
+		id = NZL_equipment_improvement
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = NZL_army_reforms }
+		x = 2
+		y = 1
+		relative_position_id = NZL_army_reforms
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.00
+				category = motorized_equipment
+			}	
+		}
+	}
+	focus = {
+		id = NZL_artillery_focus
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = NZL_equipment_improvement }
+		prerequisite = { focus = NZL_Quality_first }
+		x = -1
+		y = 1
+		relative_position_id = NZL_Quality_first
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NZL_artillery_focus
+				bonus = 1.00 
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+
+
+	focus = {
+		id = NZL_big_bob_tank
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = NZL_bob_semple_tank }
+		prerequisite = { focus = NZL_Military_uniform_factories }
+		x = -1
+		y = 1
+		relative_position_id = NZL_bob_semple_tank
+
+		cost = 12.9
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+       		date > 1942.1.1 
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_technology = { super_heavy_tank_chassis = 1 }
+			set_technology = { basic_heavy_tank_chassis = 1 }
+			set_technology = { improved_heavy_tank_chassis = 1 }
+			set_technology = { mechanised_infantry = 1 }
+			set_technology = { motorised_infantry = 1 }
+			NZL = {
+				create_equipment_variant = {
+				name = "BIG BOB" 	
+				type = super_heavy_tank_chassis_1
+					modules = {
+						main_armament_slot = tank_super_heavy_cannon
+						turret_type_slot = tank_super_heavy_four_man_tank_turret
+						special_type_slot_1 = wet_ammo_storage
+						special_type_slot_2 = wet_ammo_storage
+						special_type_slot_3 = wet_ammo_storage
+						special_type_slot_4 = wet_ammo_storage
+						suspension_type_slot = tank_bogie_suspension
+						armor_type_slot = tank_welded_armor
+						engine_type_slot = tank_gasoline_engine
+					}
+				}	
+				add_equipment_to_stockpile = { type = super_heavy_tank_chassis_1 variant_name = "BIG BOB" amount = 200 producer = NZL } 
+				add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 400 producer = NZL }
+			}
+		}
+	}
+	focus = {
+		id = NZL_support_bat
+		icon = GFX_Generic_Chemical_Warfare
+		prerequisite = { focus = NZL_Ordering_from_UK_companies focus = NZL_Development_special_forces }
+		x = -1
+		y = 1
+		relative_position_id = NZL_Ordering_from_UK_companies
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.00
+				uses = 2
+				category = support_tech
+			}		
+		}
+	}
+	focus = {
+		id = NZL_Lessons_of_war
+		icon = GFX_ENG_Modern_Warfare
+		prerequisite = { focus = NZL_long_range_patrol focus = NZL_artillery_focus }
+		x = 1
+		y = 1
+		relative_position_id = NZL_long_range_patrol
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+		add_tech_bonus = {
+				name = NZL_army_reforms
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}			
+		}
+	}
+	focus = {
+		id = NZL_women_in_army
+		available = {
+			
+		}
+
+		available_if_capitulated = yes
+
+		prerequisite = { focus = NZL_Lessons_of_war focus = NZL_support_bat }
+		icon = GFX_ENG_women_in_army
+		x = -2
+		y = 1
+		relative_position_id = NZL_Lessons_of_war
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = UK_Women_in_army	
+		}
+	}
+
+	############################
+	##### POLITICS SECTION #####
+	############################
+
+	focus = {
+		id = NZL_the_first_labor_government
+		icon = GFX_Noras_NZLLabour
+		x = 3
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_first_labor_government
+		}
+	}
+
+	############################
+	## SHARED POLITICS SECTION #
+	############################
+
+	focus = {
+		id = NZL_ratana_alliance
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = NZL_the_first_labor_government }
+		x = -3
+		y = 1
+		relative_position_id = NZL_the_first_labor_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_ratana_alliance
+		}
+	}
+
+	focus = {
+		id = NZL_maori_affairs_act
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = NZL_ratana_alliance }
+		x = -1
+		y = 1
+		relative_position_id = NZL_ratana_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			controls_state = 284
+			controls_state = 723
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			284 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			723 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_stability = -0.02
+		}
+	}
+
+	focus = {
+		id = NZL_social_security_act
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = NZL_ratana_alliance }
+		x = 1
+		y = 1
+		relative_position_id = NZL_ratana_alliance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_social_security_act
+		}
+	}
+
+	focus = {
+		id = NZL_the_manpower_act
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = NZL_social_security_act focus = NZL_maori_affairs_act }
+		x = 0
+		y = 2
+		relative_position_id = NZL_ratana_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_the_manpower_act
+		}
+	}
+
+	focus = {
+		id = NZL_amend_the_maori_affairs_act
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = NZL_the_manpower_act }
+		
+		x = -1
+		y = 3
+		relative_position_id = NZL_ratana_alliance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			284 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			723 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			add_stability = -0.03
+		}
+	}
+
+	focus = {
+		id = NZL_waitangi_tribunal
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = NZL_the_manpower_act }
+		x = 1
+		y = 3
+		relative_position_id = NZL_ratana_alliance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_waitangi_tribunal
+		}
+	}
+
+	focus = {
+		id = NZL_maori_conscription
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = NZL_amend_the_maori_affairs_act }
+		x = -1
+		y = 4
+		relative_position_id = NZL_ratana_alliance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_maori_conscription
+		}
+	}
+
+	
+
+
+	#########################
+	### THE CLASH SECTION ###
+	#########################
+
+	focus = {
+		id = NZL_strengthen_the_commonwealth
+		icon = GFX_Noras_NZLCommonwealth
+		prerequisite = { focus = NZL_the_first_labor_government }
+		x = 0
+		y = 1
+		relative_position_id = NZL_the_first_labor_government
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			modify_tech_sharing_bonus = {
+			  	id = commonwealth_research
+			   	bonus = 0.05
+			}
+			add_political_power = 100
+			add_opinion_modifier = { target = ENG modifier = NZL_strengthen_ties }
+			ENG = { add_opinion_modifier = { target = NZL modifier = NZL_strengthen_ties } }
+		}
+	}
+
+	############################
+	# GO COMMONWEALTH SECTION ##
+	############################
+
+#	focus = {
+#		id = NZL_2nzef
+#		icon = GFX_goal_generic_position_armies
+#		prerequisite = { focus = NZL_strengthen_the_commonwealth }
+#		x = 0
+#		y = 1
+#		relative_position_id = NZL_strengthen_the_commonwealth
+#
+#		cost = 5
+#
+#		ai_will_do = {
+#			factor = 25
+#		}
+#
+#		available = {
+#
+#		}
+#
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = no
+#		continue_if_invalid = yes
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#			add_ideas = NZL_2nzef
+#		}
+#	}
+
+	focus = {
+		id = NZL_technology_sharing_with_britain
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = NZL_strengthen_the_commonwealth }
+		x = 0
+		y = 2
+		relative_position_id = NZL_strengthen_the_commonwealth
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			ENG = { has_government = ROOT }
+			is_in_tech_sharing_group = commonwealth_research
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			modify_tech_sharing_bonus = {
+ 				id = commonwealth_research
+ 				bonus = 0.05  # we get 20% higher bonus from this group
+			}
+		}
+	}
+
+	focus = {
+		id = NZL_arrest_pacifist_leaders
+		icon = GFX_Noras_arrestpacifist
+		prerequisite = { focus = NZL_technology_sharing_with_britain }
+		x = 0
+		y = 3
+		relative_position_id = NZL_strengthen_the_commonwealth
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = NZL_stomp_out_pacifism
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = NZL_synthetic_rubber
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = NZL_expand_the_university_of_auckland }
+		x = 0
+		y = 1
+		relative_position_id = NZL_expand_the_university_of_auckland
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			has_war_with = JAP
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GDU_refinery_prebuild_disincentive
+				add_idea = NZL_synthetic_rubber
+			}
+			add_tech_bonus = {
+				name = NZL_rubber
+				bonus = 1
+				uses = 1
+				technology = rubber_processing
+				technology = improved_rubber_processing
+				technology = advanced_rubber_processing
+				technology = modern_rubber_processing
+			}
+		}
+	}
+}

@@ -1,0 +1,1585 @@
+###########################
+# Bulgarian Events
+###########################
+
+add_namespace = bftb_bulgaria_factions
+add_namespace = bftb_bulgaria_imro
+add_namespace = bftb_bulgaria_tsar_boris
+add_namespace = bftb_bulgarian_claims
+add_namespace = bftb_bulgaria_fatherland_front
+add_namespace = bftb_bulgaria_rearmament
+add_namespace = bftb_bulgaria_german_influence
+add_namespace = bftb_bulgaria_italian_influence
+add_namespace = bftb_bulgaria_uranium_mining_concessions
+add_namespace = bftb_bulgaria_nationalization
+add_namespace = bftb_bulgaria_equipment_purchases
+add_namespace = bftb_bulgaria_political_leaders
+add_namespace = bftb_bulgaria_greek_influence
+add_namespace = bftb_bulgaria_british_influence
+add_namespace = bftb_bulgaria_democratic_international_policies
+
+
+#### ##    ## ######## ######## ########  ##    ##    ###    ##          ########    ###     ######  ######## ####  #######  ##    ##  ######  
+ ##  ###   ##    ##    ##       ##     ## ###   ##   ## ##   ##          ##         ## ##   ##    ##    ##     ##  ##     ## ###   ## ##    ## 
+ ##  ####  ##    ##    ##       ##     ## ####  ##  ##   ##  ##          ##        ##   ##  ##          ##     ##  ##     ## ####  ## ##       
+ ##  ## ## ##    ##    ######   ########  ## ## ## ##     ## ##          ######   ##     ## ##          ##     ##  ##     ## ## ## ##  ######  
+ ##  ##  ####    ##    ##       ##   ##   ##  #### ######### ##          ##       ######### ##          ##     ##  ##     ## ##  ####       ## 
+ ##  ##   ###    ##    ##       ##    ##  ##   ### ##     ## ##          ##       ##     ## ##    ##    ##     ##  ##     ## ##   ### ##    ## 
+#### ##    ##    ##    ######## ##     ## ##    ## ##     ## ########    ##       ##     ##  ######     ##    ####  #######  ##    ##  ######  
+#### ##     ## ########   #######  
+ ##  ###   ### ##     ## ##     ## 
+ ##  #### #### ##     ## ##     ## 
+ ##  ## ### ## ########  ##     ## 
+ ##  ##     ## ##   ##   ##     ## 
+ ##  ##     ## ##    ##  ##     ## 
+#### ##     ## ##     ##  #######  
+
+
+#The IMRO is back! - Event for YUG and GRE (or whoever occupy Macedonian states)
+country_event = {
+	id = bftb_bulgaria_imro.1
+	title = bftb_bulgaria_imro.1.t
+	desc = bftb_bulgaria_imro.1.desc
+	picture = GFX_report_event_bul_troops_macedonia
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = bftb_bulgaria_imro.1.a
+
+		effect_tooltip = {
+			every_controlled_state = {
+				limit = {
+					BUL_is_macedonian_state = yes
+					is_controlled_by = ROOT
+				}
+				remove_core_of = controller
+				start_resistance = BUL
+			}
+		}
+	}
+}
+
+#IMRO spreads Bulgarian sentiment - Event for YUG and GRE (or whoever occupy Macedonian states)
+country_event = {
+	id = bftb_bulgaria_imro.2
+	title = bftb_bulgaria_imro.2.t
+	desc = bftb_bulgaria_imro.2.desc
+	picture = GFX_report_event_albanian_partisans
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = bftb_bulgaria_imro.2.a
+
+		effect_tooltip = {
+			every_controlled_state = {
+				limit = {
+					BUL_is_macedonian_state = yes
+					is_controlled_by = ROOT
+				}
+			}
+		}
+	}
+}
+
+
+########  ######     ###    ########     ########   #######  ########  ####  ######     #### #### #### 
+   ##    ##    ##   ## ##   ##     ##    ##     ## ##     ## ##     ##  ##  ##    ##     ##   ##   ##  
+   ##    ##        ##   ##  ##     ##    ##     ## ##     ## ##     ##  ##  ##           ##   ##   ##  
+   ##     ######  ##     ## ########     ########  ##     ## ########   ##   ######      ##   ##   ##  
+   ##          ## ######### ##   ##      ##     ## ##     ## ##   ##    ##        ##     ##   ##   ##  
+   ##    ##    ## ##     ## ##    ##     ##     ## ##     ## ##    ##   ##  ##    ##     ##   ##   ##  
+   ##     ######  ##     ## ##     ##    ########   #######  ##     ## ####  ######     #### #### #### 
+
+
+#Tsar Boris visits a town
+
+
+#Tsar Boris has died. Form a temporary government
+country_event = {
+	id = bftb_bulgaria_tsar_boris.2
+	title = bftb_bulgaria_tsar_boris.2.t
+	desc = bftb_bulgaria_tsar_boris.2.desc
+	picture = GFX_report_event_bul_boris_death
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = BUL_tsar_boris_is_dead_flag }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_variable = { BUL_date_of_tsars_death = global.date }
+			set_country_flag = BUL_tsar_boris_is_dead_flag
+		}
+	}
+
+	option = {
+		name = bftb_bulgaria_tsar_boris.2.a
+
+		trigger = { 
+		}
+
+		if = {
+			limit = {
+				has_country_flag = BUL_foreign_support_for_regicide_flag
+			}
+			add_stability = -0.05
+		}
+		else = {
+			add_stability = -0.15
+		}
+
+		if = {
+			limit = {
+				has_idea = BUL_tsar_boris_positive_01
+			}
+			remove_ideas = BUL_tsar_boris_positive_01
+		}
+		else_if = {
+			limit = {
+				has_idea = BUL_tsar_boris_positive_02
+			}
+			remove_ideas = BUL_tsar_boris_positive_02
+		}
+		else_if = {
+			limit = {
+				has_idea = BUL_tsar_boris_positive_03
+			}
+			remove_ideas = BUL_tsar_boris_positive_03
+		}
+		else_if = {
+			limit = {
+				has_idea = BUL_tsar_boris_negative_01
+			}
+			remove_ideas = BUL_tsar_boris_negative_01
+		}
+
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			kill_country_leader = yes
+		}
+		if = {
+			limit = { has_idea = BUL_georgi_ivanov_kyoseivanov_bftb }
+			create_country_leader = {
+				name = "Georgi Kyoseivanov"
+				desc = "POLITICS_GEORGI_KYOSEIVANOV_DESC"
+				picture = GFX_portrait_bul_georgi_kyoseivanov
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+					incompetent_leader no_designated_regency
+				}
+			}
+		}
+		else = {
+			create_country_leader = {
+				name = "Bogdan Filov"
+				desc = "POLITICS_BOGDAN_FILOV_DESC"
+				picture = GFX_portrait_bul_bogdan_filov
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					political_manipulator no_designated_regency
+				}
+			}
+		}
+
+	}
+}
+
+#Form a Regency Council
+country_event = {
+	id = bftb_bulgaria_tsar_boris.3
+	title = bftb_bulgaria_tsar_boris.3.t
+	desc = bftb_bulgaria_tsar_boris.3.desc
+	picture = GFX_report_event_bul_prince_simeon 
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Pro-Fascist Regency Council
+		name = bftb_bulgaria_tsar_boris.3.a
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 5
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 5
+				is_in_faction_with = GER
+				GER = { has_government = fascism }
+			}
+		}
+
+		trigger = {
+			OR = {
+				has_government = fascism
+				AND = {
+					has_government = neutrality
+					OR = {
+						is_in_faction = no
+						AND = {
+							any_allied_country = {
+								is_major = yes
+								has_government = fascism
+							}
+						}
+						AND = {
+							is_faction_leader = yes
+							NOT = {
+								any_allied_country = {
+									is_major = yes
+									OR = {
+										has_government = democratic
+										has_government = communism
+									}
+								}
+							}
+						}
+					}
+				}	
+			}
+		}
+
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Hristo Lukov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						elected_regency_council_pro_axis hardened_officer_regency_council
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						name = "Aleksandar Tsankov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = nazism
+					traits = {
+						elected_regency_council_pro_axis the_bloody_professor_regency_council
+					}
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						elected_regency_council_pro_axis
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Bogdan Filov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						elected_regency_council_pro_axis political_manipulator_regency_council
+					}
+				}
+				create_country_leader = {
+					name = "Georgi Kyoseivanov"
+					desc = "POLITICS_GEORGI_KYOSEIVANOV_DESC"
+					picture = GFX_portrait_bul_georgi_kyoseivanov
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+						incompetent_leader
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						name = "Georgi Kyoseivanov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						elected_regency_council_pro_axis
+					}
+				}
+				create_country_leader = {
+					name = "Bogdan Filov"
+					desc = "POLITICS_BOGDAN_FILOV_DESC"
+					picture = GFX_portrait_bul_bogdan_filov
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+						political_manipulator
+					}
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						elected_regency_council_pro_axis
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = fascism }
+			}
+			set_politics = {
+				ruling_party = fascism
+				election_frequency = 48
+				elections_allowed = no
+			}
+		}
+	}
+
+	option = { #Pro-Democratic Regency Council
+		name = bftb_bulgaria_tsar_boris.3.b
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = GER
+				GER = { has_government = fascism }
+			}
+		}
+
+		trigger = { 
+			OR = {
+				has_government = democratic
+				AND = {
+					has_government = neutrality
+					OR = {
+						is_in_faction = no
+						AND = {
+							any_allied_country = {
+								is_major = yes
+								has_government = democratic
+							}
+						}
+						AND = {
+							is_faction_leader = yes
+							NOT = {
+								any_allied_country = {
+									is_major = yes
+									has_government = fascism
+								}
+							}
+						}
+					}
+				}	
+			}
+		}
+
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Nikola Mushanov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council_pro_allies appeaser_regency_council
+					}
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council_pro_allies
+					}
+				}
+			}	
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Bogdan Filov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council_pro_allies political_manipulator_regency_council
+					}
+				}
+				create_country_leader = {
+					name = "Georgi Kyoseivanov"
+					desc = "POLITICS_GEORGI_KYOSEIVANOV_DESC"
+					picture = GFX_portrait_bul_georgi_kyoseivanov
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+						incompetent_leader
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						name = "Georgi Kyoseivanov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council_pro_allies
+					}
+				}
+				create_country_leader = {
+					name = "Bogdan Filov"
+					desc = "POLITICS_BOGDAN_FILOV_DESC"
+					picture = GFX_portrait_bul_bogdan_filov
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+						political_manipulator
+					}
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council_pro_allies
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = democratic }
+			}
+			set_politics = {
+				ruling_party = democratic
+				election_frequency = 48
+				elections_allowed = no
+			}
+		}
+	}
+
+	option = { #Independent Regency Council
+		name = bftb_bulgaria_tsar_boris.3.c
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0.9
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = GER
+				GER = { has_government = fascism }
+			}
+		}
+
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Hristo Lukov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						elected_regency_council hardened_officer_regency_council
+					}
+				}
+				hidden_effect = {
+					retire_ideology_leader = fascism
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						name = "Aleksandar Tsankov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						elected_regency_council the_bloody_professor_regency_council
+					}
+				}
+				hidden_effect = {
+					retire_ideology_leader = fascism
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						elected_regency_council
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_government = democratic
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Nikola Mushanov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+						elected_regency_council appeaser_regency_council
+					}
+				}
+				hidden_effect = {
+					retire_ideology_leader = democratic
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+						elected_regency_council
+					}
+				}
+			}	
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Bogdan Filov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council political_manipulator_regency_council
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						name = "Georgi Kyoseivanov"
+						ruling_only = yes
+					}
+				}
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council
+					}
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Regency Council"
+					desc = "POLITICS_BULGARIAN_REGENCY_COUNCIL_DESC"
+					picture = GFX_portrait_bul_regency_council
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						elected_regency_council
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = neutrality }
+			}
+			set_politics = {
+				ruling_party = neutrality
+				election_frequency = 48
+				elections_allowed = no
+			}
+		}
+	}
+}
+
+
+########    ###    ######## ##     ## ######## ########  ##          ###    ##    ## ########     ######## ########   #######  ##    ## ######## 
+##         ## ##      ##    ##     ## ##       ##     ## ##         ## ##   ###   ## ##     ##    ##       ##     ## ##     ## ###   ##    ##    
+##        ##   ##     ##    ##     ## ##       ##     ## ##        ##   ##  ####  ## ##     ##    ##       ##     ## ##     ## ####  ##    ##    
+######   ##     ##    ##    ######### ######   ########  ##       ##     ## ## ## ## ##     ##    ######   ########  ##     ## ## ## ##    ##    
+##       #########    ##    ##     ## ##       ##   ##   ##       ######### ##  #### ##     ##    ##       ##   ##   ##     ## ##  ####    ##    
+##       ##     ##    ##    ##     ## ##       ##    ##  ##       ##     ## ##   ### ##     ##    ##       ##    ##  ##     ## ##   ###    ##    
+##       ##     ##    ##    ##     ## ######## ##     ## ######## ##     ## ##    ## ########     ##       ##     ##  #######  ##    ##    ##    
+
+
+#The Fatherland Front has formed
+country_event = {
+	id = bftb_bulgaria_fatherland_front.1
+	title = bftb_bulgaria_fatherland_front.1.t
+
+	# Desc when NOT formed by the player
+	desc = {
+		text = bftb_bulgaria_fatherland_front.1.desc_negative
+	}
+
+	picture = GFX_report_event_bul_partisans_plovdiv
+
+	is_triggered_only = yes #on_weekly_BUL handles this
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+				set_country_flag = BUL_fatherland_front_formed_flag
+		}
+	}
+
+	option = { #When NOT formed by the player
+		name = bftb_bulgaria_fatherland_front.1.b
+
+		effect_tooltip = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+		set_party_name = {
+			ideology = communism
+			long_name = BUL_fatherland_front_party_long
+			name = BUL_fatherland_front_party
+		}
+	}
+}
+
+
+########  ########    ###    ########  ##     ##    ###    ##     ## ######## ##    ## ######## 
+##     ## ##         ## ##   ##     ## ###   ###   ## ##   ###   ### ##       ###   ##    ##    
+##     ## ##        ##   ##  ##     ## #### ####  ##   ##  #### #### ##       ####  ##    ##    
+########  ######   ##     ## ########  ## ### ## ##     ## ## ### ## ######   ## ## ##    ##    
+##   ##   ##       ######### ##   ##   ##     ## ######### ##     ## ##       ##  ####    ##    
+##    ##  ##       ##     ## ##    ##  ##     ## ##     ## ##     ## ##       ##   ###    ##    
+##     ## ######## ##     ## ##     ## ##     ## ##     ## ##     ## ######## ##    ##    ##    
+
+
+#Negotiate Bulgarian Rearmament - ENG accepts (Event for BUL)
+country_event = {
+	id = bftb_bulgaria_rearmament.6
+	title = bftb_bulgaria_rearmament.6.t
+	desc = bftb_bulgaria_rearmament.6.desc
+	picture = GFX_report_event_generic_sign_treaty1 
+
+	is_triggered_only = yes
+
+	option = { #Ok
+		name = bftb_bulgaria_rearmament.6.a
+		
+		remove_ideas = BUL_army_restrictions
+		clr_country_flag = BUL_rearmament_flag
+
+		add_opinion_modifier = {
+			target = FROM
+			modifier = BUL_lifted_arms_restrictions
+		}
+	}
+}
+
+
+ #######  ######## ##     ## ######## ########  
+##     ##    ##    ##     ## ##       ##     ## 
+##     ##    ##    ##     ## ##       ##     ## 
+##     ##    ##    ######### ######   ########  
+##     ##    ##    ##     ## ##       ##   ##   
+##     ##    ##    ##     ## ##       ##    ##  
+ #######     ##    ##     ## ######## ##     ## 
+
+
+ #Bulgaria grants exploitation rights to an ally
+country_event = {
+	id = bftb_bulgaria_uranium_mining_concessions.1
+	title = bftb_bulgaria_uranium_mining_concessions.1.t
+	desc = bftb_bulgaria_uranium_mining_concessions.1.desc
+	picture = GFX_report_event_generic_read_write 
+
+	is_triggered_only = yes
+
+	option = { #Ok
+		name = bftb_bulgaria_uranium_mining_concessions.1.a
+
+		effect_tooltip = {
+			add_ideas = BUL_buhovo_uranium_mines
+			add_opinion_modifier = {
+				target = BUL
+				modifier = BUL_granted_uranium_mining_rights
+			}
+			BUL = {
+				remove_ideas = BUL_buhovo_uranium_mines
+				add_ideas = BUL_uranium_concession_agreement_ns
+			}
+		}
+	}
+}
+
+
+
+
+   ###    ##     ## ####  ######     ######## ##     ## ######## ##    ## ########  ######  
+  ## ##    ##   ##   ##  ##    ##    ##       ##     ## ##       ###   ##    ##    ##    ## 
+ ##   ##    ## ##    ##  ##          ##       ##     ## ##       ####  ##    ##    ##       
+##     ##    ###     ##   ######     ######   ##     ## ######   ## ## ##    ##     ######  
+#########   ## ##    ##        ##    ##        ##   ##  ##       ##  ####    ##          ## 
+##     ##  ##   ##   ##  ##    ##    ##         ## ##   ##       ##   ###    ##    ##    ## 
+##     ## ##     ## ####  ######     ########    ###    ######## ##    ##    ##     ######  
+
+
+#Bulgaria wants to get their claims warranted - Event for GER
+country_event = {
+	id = bftb_bulgarian_claims.1
+	title = bftb_bulgarian_claims.1.t
+	desc = bftb_bulgarian_claims.1.desc
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	option = { #YES
+		name = bftb_bulgarian_claims.1.a
+
+		every_state = {
+			limit = {
+				has_state_flag = BUL_historical_bulgarian_claim_flag
+				controller = {
+					OR = {
+						tag = GER
+						AND = {
+							NOT = { is_in_faction_with = GER }
+							NOT = { tag = BUL }
+						}
+					}
+				}
+			}
+			set_state_flag = BUL_bulgarian_claim_warranted_flag
+		}
+		effect_tooltip = {
+			BUL = {
+				add_opinion_modifier = { 
+					target = GER
+					modifier = BUL_bulgarian_claims_recognized
+				}
+			}
+		}
+		BUL = { country_event = { id = bftb_bulgarian_claims.2 hours = 16 random_hours = 8 } }
+
+		set_global_flag = BUL_germany_recognizes_bulgarian_claims_flag
+		custom_effect_tooltip = bftb_bulgarian_claims.1.a_tt
+	}
+}
+
+#Germany recognizes Bulgarian claims in the Balkans - Event for BUL
+country_event = {
+	id = bftb_bulgarian_claims.2
+	title = bftb_bulgarian_claims.2.t
+	desc = bftb_bulgarian_claims.2.desc
+	picture = GFX_report_event_bul_boris_with_hitler 
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = bftb_bulgarian_claims.2.a
+
+		add_opinion_modifier = { 
+			target = GER
+			modifier = BUL_bulgarian_claims_recognized
+		}
+		effect_tooltip = {
+			every_state = {
+				limit = {
+					has_state_flag = BUL_historical_bulgarian_claim_flag
+					controller = {
+						OR = {
+							tag = GER
+							AND = {
+								NOT = { is_in_faction_with = GER }
+								NOT = { tag = BUL }
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = BUL_germany_recognizes_our_claim_tt
+			}
+		}
+
+		if = {
+			limit = {
+				has_country_flag = BUL_german_influence_flag
+			}
+			modify_country_flag = { flag = BUL_german_influence_flag value = 1 }
+		}
+		else = {
+			set_country_flag = { flag = BUL_german_influence_flag value = 1 }
+		}
+	}
+}
+
+#Germany transferred Bulgaria's claimed states - Event for BUL
+country_event = {
+	id = bftb_bulgarian_claims.4
+	title = bftb_bulgarian_claims.4.t
+	desc = bftb_bulgarian_claims.4.desc
+	picture = GFX_report_event_bul_imro_chieftain
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			GER = { country_event = bftb_bulgarian_claims.5 }
+		
+		if = {
+			limit = {
+				any_state = {
+					has_state_flag = BUL_bulgarian_claim_warranted_flag
+					controller = {
+						NOT = { tag = GER }
+						NOT = { tag = BUL }
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = BUL_bulgarian_claim_warranted_flag
+					controller = {
+						is_in_faction_with = GER
+						NOT = { tag = GER }
+						NOT = { tag = BUL }
+					}
+				}
+				controller = { country_event = bftb_bulgarian_claims.6 }
+			}
+		}
+		}
+	}
+
+	option = {
+		name = bftb_bulgarian_claims.4.a
+
+		add_opinion_modifier = { 
+			target = GER
+			modifier = BUL_honored_bulgarian_claims
+		}
+
+		every_state = {
+			limit = {
+				has_state_flag = BUL_bulgarian_claim_warranted_flag
+				OR = {
+					is_controlled_by = GER
+					controller = {
+						is_in_faction_with = GER
+						NOT = { tag = BUL }
+					}
+				}		
+			}
+			BUL = {
+				transfer_state = PREV
+				hidden_effect = {
+					set_state_controller = PREV
+				}
+			}
+		}
+	}
+}
+
+#Germany transferred Bulgaria's claimed states - Event for GER
+country_event = {
+	id = bftb_bulgarian_claims.5
+	title = bftb_bulgarian_claims.5.t
+	desc = bftb_bulgarian_claims.5.desc
+	picture = GFX_report_event_bul_troops_dobrudja
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = bftb_bulgarian_claims.5.a
+
+		effect_tooltip = {
+			BUL = {
+				add_opinion_modifier = { 
+					target = GER
+					modifier = BUL_honored_bulgarian_claims
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = BUL_bulgarian_claim_warranted_flag
+					OR = {
+						is_controlled_by = GER
+						controller = {
+							is_in_faction_with = GER
+						}
+					}		
+				}
+				BUL = { set_state_controller = PREV }
+			}
+		}
+	}
+}
+
+#Germany transferred Bulgaria's claimed states - Event for any allied controller of transferred states
+country_event = {
+	id = bftb_bulgarian_claims.6
+	title = bftb_bulgarian_claims.6.t
+	desc = bftb_bulgarian_claims.6.desc
+	picture = GFX_report_event_bul_troops_dobrudja 
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = bftb_bulgarian_claims.6.a
+
+		effect_tooltip = {
+			every_state = {
+				limit = {
+					has_state_flag = BUL_bulgarian_claim_warranted_flag
+					is_controlled_by = ROOT		
+				}
+				BUL = { set_state_controller = PREV }
+			}
+		}
+	}
+}
+
+#Bulgaria asks for control over Balkan state - Event for controller of the state
+country_event = {
+	id = bftb_bulgarian_claims.7
+	title = bftb_bulgarian_claims.7.t
+	desc = bftb_bulgarian_claims.7.desc
+	picture = GFX_report_event_generic_sign_treaty2 
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = { #ACCEPT
+		name = bftb_bulgarian_claims.7.a
+
+		ai_chance = {
+			base = 10
+		}
+
+		add_political_power = 25
+		#FROM.FROM is the state targeted by the decision
+		FROM = {
+			transfer_state = FROM.FROM
+			set_state_controller = FROM.FROM
+			country_event = bftb_bulgarian_claims.8
+		}
+	}
+}
+
+#Country accepts Bulgarian control over state - Event for BUL
+country_event = {
+	id = bftb_bulgarian_claims.8
+	title = bftb_bulgarian_claims.8.t
+	desc = bftb_bulgarian_claims.8.desc
+	picture = GFX_report_event_bul_troops_dobrudja
+
+	is_triggered_only = yes
+
+	option = { #Ok
+		name = bftb_bulgarian_claims.8.a
+
+		effect_tooltip = {
+			#FROM.FROM is the state targeted by the decision
+			transfer_state = FROM.FROM
+			set_state_controller = FROM.FROM
+		}
+	}
+}
+
+#Germany demands we replace Kyoseyvanov - Event for BUL
+country_event = {
+	id = bftb_bulgaria_german_influence.4
+	title = bftb_bulgaria_german_influence.4.t
+	desc = bftb_bulgaria_german_influence.4.desc
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Accept
+		name = bftb_bulgaria_german_influence.4.a
+
+		ai_chance = {
+			base = 5
+		}
+
+		add_political_power = 50
+		remove_ideas = BUL_georgi_ivanov_kyoseivanov_bftb
+		add_ideas = BUL_bogdan_filov
+		GER = {
+			add_opinion_modifier = { 
+				target = BUL
+				modifier = BUL_complied_with_our_demands
+			}
+		}
+		modify_country_flag = { flag = BUL_german_influence_flag value = 1 }
+
+		GER = { country_event = { id = bftb_bulgaria_german_influence.5 hours = 2 random_hours = 1 } }
+	}
+}
+
+#Germany demands military access - Event for BUL
+country_event = {
+	id = bftb_bulgaria_german_influence.7
+	title = bftb_bulgaria_german_influence.7.t
+	desc = bftb_bulgaria_german_influence.7.desc
+	picture = GFX_report_event_german_troops 
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Accept
+		name = bftb_bulgaria_german_influence.7.a
+
+		ai_chance = {
+			base = 5
+		}
+
+		effect_tooltip = {
+			give_military_access = GER
+			GER = {
+				add_opinion_modifier = { 
+					target = BUL
+					modifier = BUL_complied_with_our_demands
+				}
+			}
+		}
+		modify_country_flag = { flag = BUL_german_influence_flag value = 1 }
+
+		GER = { country_event = { id = bftb_bulgaria_german_influence.8 hours = 2 random_hours = 1 } }
+	}
+}
+
+########  ##     ## ########   ######  ##     ##    ###     ######  ########    ########  #######  ##     ## #### ########  ##     ## ######## ##    ## ######## 
+##     ## ##     ## ##     ## ##    ## ##     ##   ## ##   ##    ## ##          ##       ##     ## ##     ##  ##  ##     ## ###   ### ##       ###   ##    ##    
+##     ## ##     ## ##     ## ##       ##     ##  ##   ##  ##       ##          ##       ##     ## ##     ##  ##  ##     ## #### #### ##       ####  ##    ##    
+########  ##     ## ########  ##       ######### ##     ##  ######  ######      ######   ##     ## ##     ##  ##  ########  ## ### ## ######   ## ## ##    ##    
+##        ##     ## ##   ##   ##       ##     ## #########       ## ##          ##       ##  ## ## ##     ##  ##  ##        ##     ## ##       ##  ####    ##    
+##        ##     ## ##    ##  ##    ## ##     ## ##     ## ##    ## ##          ##       ##    ##  ##     ##  ##  ##        ##     ## ##       ##   ###    ##    
+##         #######  ##     ##  ######  ##     ## ##     ##  ######  ########    ########  ##### ##  #######  #### ##        ##     ## ######## ##    ##    ##    
+
+
+#Purchase Artillery
+country_event = {
+	id = bftb_bulgaria_equipment_purchases.1
+	title = bftb_bulgaria_equipment_purchases.1.t
+	desc = bftb_bulgaria_equipment_purchases.1.desc
+	picture = GFX_report_event_bul_artillery 
+
+	is_triggered_only = yes
+
+	option = { #Artillery
+		name = bftb_bulgaria_equipment_purchases.1.a
+
+		ai_chance = {
+			base = 15
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = artillery_equipment
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		set_variable = { BUL_artillery_type = token:artillery_equipment }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.1.a_tt
+	}
+
+	option = { #Anti-Air
+		name = bftb_bulgaria_equipment_purchases.1.b
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = anti_air_equipment
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		trigger = {
+			FROM.FROM = {
+				has_tech = interwar_antiair
+			}
+		}
+
+		set_variable = { BUL_artillery_type = token:anti_air_equipment }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.1.b_tt
+	}
+
+	option = { #Anti-Tank
+		name = bftb_bulgaria_equipment_purchases.1.c
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = anti_tank_equipment
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		trigger = {
+			FROM.FROM = {
+				has_tech = interwar_antitank
+			}
+		}
+
+		set_variable = { BUL_artillery_type = token:anti_tank_equipment }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.1.c_tt
+	}
+}
+
+#Purchase Military Vehicles
+country_event = {
+	id = bftb_bulgaria_equipment_purchases.2
+	title = bftb_bulgaria_equipment_purchases.2.t
+	desc = bftb_bulgaria_equipment_purchases.2.desc
+	picture = GFX_report_event_generic_truck 
+
+	is_triggered_only = yes
+
+	option = { #Motorized
+		name = bftb_bulgaria_equipment_purchases.2.a
+
+		ai_chance = {
+			base = 15
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = motorized_equipment
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		set_variable = { BUL_vehicle_type = token:motorized_equipment }
+		FROM.FROM = { set_country_flag = BUL_producing_motorized_for_bulgaria_flag }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.2.a_tt
+	}
+
+	option = { #Mechanized
+		name = bftb_bulgaria_equipment_purchases.2.b
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = mechanized_equipment
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		trigger = {
+			FROM.FROM = {
+				has_tech = mechanised_infantry
+			}
+		}
+
+		set_variable = { BUL_vehicle_type = token:mechanized_equipment }
+		FROM.FROM = { set_country_flag = BUL_producing_mechanized_for_bulgaria_flag }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.2.b_tt
+	}
+
+	option = { #Armored Cars
+		name = bftb_bulgaria_equipment_purchases.2.c
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = armored_car_equipment
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		trigger = {
+			FROM.FROM = {
+				has_tech = armored_car1
+			}
+		}
+
+		set_variable = { BUL_vehicle_type = token:armored_car_equipment }
+		FROM.FROM = { set_country_flag = BUL_producing_armored_car_for_bulgaria_flag }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.2.c_tt
+	}
+}
+
+#Purchase Armor
+country_event = {
+	id = bftb_bulgaria_equipment_purchases.3
+	title = bftb_bulgaria_equipment_purchases.3.t
+	desc = bftb_bulgaria_equipment_purchases.3.desc
+	picture = GFX_report_event_tank_factory 
+
+	is_triggered_only = yes
+
+	option = { #Light Tank
+		name = bftb_bulgaria_equipment_purchases.3.a
+
+		ai_chance = {
+			base = 15
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = light_tank_chassis
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		set_variable = { BUL_armor_type = token:light_tank_chassis }
+		FROM.FROM = { set_country_flag = BUL_producing_light_armor_for_bulgaria_flag }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.3.a_tt
+	}
+
+	option = { #Medium Tank
+		name = bftb_bulgaria_equipment_purchases.3.b
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = medium_tank_chassis
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		trigger = {
+			FROM.FROM = {
+				has_tech = basic_medium_tank_chassis
+			}
+		}
+
+		set_variable = { BUL_armor_type = token:medium_tank_chassis }
+		FROM.FROM = { set_country_flag = BUL_producing_medium_armor_for_bulgaria_flag }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.3.b_tt
+	}
+
+	option = { #Heavy Tank
+		name = bftb_bulgaria_equipment_purchases.3.c
+
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				stockpile_ratio = { 
+	  				archetype = heavy_tank_chassis
+	  				ratio < 0.76
+	  			}
+			}
+		}
+
+		trigger = {
+			FROM.FROM = {
+				has_tech = basic_heavy_tank_chassis
+			}
+		}
+
+		set_variable = { BUL_armor_type = token:heavy_tank_chassis }
+		FROM.FROM = { set_country_flag = BUL_producing_heavy_armor_for_bulgaria_flag }
+		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.3.c_tt
+	}
+}
+
+
+
+
+
+
+########   #######  ##       #### ######## ####  ######     ###    ##          ##       ########    ###    ########  ######## ########   ######  
+##     ## ##     ## ##        ##     ##     ##  ##    ##   ## ##   ##          ##       ##         ## ##   ##     ## ##       ##     ## ##    ## 
+##     ## ##     ## ##        ##     ##     ##  ##        ##   ##  ##          ##       ##        ##   ##  ##     ## ##       ##     ## ##       
+########  ##     ## ##        ##     ##     ##  ##       ##     ## ##          ##       ######   ##     ## ##     ## ######   ########   ######  
+##        ##     ## ##        ##     ##     ##  ##       ######### ##          ##       ##       ######### ##     ## ##       ##   ##         ## 
+##        ##     ## ##        ##     ##     ##  ##    ## ##     ## ##          ##       ##       ##     ## ##     ## ##       ##    ##  ##    ## 
+##         #######  ######## ####    ##    ####  ######  ##     ## ########    ######## ######## ##     ## ########  ######## ##     ##  ######  
+
+
+#The murder of Hristo Lukov
+country_event = {
+	id = bftb_bulgaria_political_leaders.1
+	title = bftb_bulgaria_political_leaders.1.t
+	desc = bftb_bulgaria_political_leaders.1.desc
+	picture = GFX_report_event_generic_funeral
+
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 300
+			has_government = fascism
+		}
+		modifier = {
+			factor = 100
+			has_stability > 0.5
+		}
+		modifier = {
+			factor = 100
+			has_stability > 0.75
+		}
+		modifier = {
+			factor = 10
+			communism < 0.05
+		}
+		modifier = {
+			factor = 100
+			communism < 0.01
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = BUL_fatherland_front_formed_flag
+			NOT = { has_country_flag = BUL_ff_destroyed_flag }
+		}
+		modifier = {
+			factor = 0.5
+			has_government = communism
+		}
+	}
+
+	trigger = {
+
+		original_tag = BUL
+		has_country_leader = { name = "Hristo Lukov" ruling_only = no }
+		date > 1943.02.10
+	}
+
+	fire_only_once = yes
+
+	option = {#Get a new UBNL leader
+		name = bftb_bulgaria_political_leaders.1.a
+
+		trigger = {
+			has_government = fascism
+		}
+
+		kill_ideology_leader = fascism
+	}
+
+	option = {#Get Aleksandar Tsankov as leader
+		name = bftb_bulgaria_political_leaders.1.b
+
+		trigger = {
+			has_country_flag = BUL_nsm_integrated_flag
+			has_government = fascism
+		}
+
+		kill_ideology_leader = fascism
+		set_party_name = {
+			ideology = fascism
+			long_name = BUL_national_social_movement_party_long
+			name = BUL_national_social_movement_party
+		}
+		create_country_leader = {
+			name = "Aleksandar Tsankov"
+			desc = "POLITICS_BOGDAN_FILOV_DESC"
+			picture = GFX_portrait_bul_aleksandar_tsankov
+			expire = "1965.1.1"
+			ideology = nazism
+			traits = {
+				the_bloody_professor
+			}
+		}
+	}
+
+	option = {#Commie
+		name = bftb_bulgaria_political_leaders.1.c
+
+		trigger = {
+			has_government = communism
+		}
+
+		kill_ideology_leader = fascism
+	}
+
+	option = {#Other ideologies
+		name = bftb_bulgaria_political_leaders.1.d
+
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+
+		kill_ideology_leader = fascism
+	}
+}

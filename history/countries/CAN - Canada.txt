@@ -1,0 +1,359 @@
+﻿capital = 276
+set_convoys = 600
+set_stability = 0.75
+set_research_slots = 4
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_oob = "CAN_1936_nsb"
+set_naval_oob = "CAN_1936_naval_mtg"
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.10.14"
+	election_frequency = 60
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 98
+	fascism = 1
+	communism = 1
+}
+add_timed_idea = {
+	idea = airandnavy_idea
+	days = 1320
+}
+
+add_ideas = GDU_refinery_prebuild_disincentive
+add_ideas = CAN_great_depression_1
+add_ideas = CAN_conscription_crisis
+set_cosmetic_tag = CAN_UK
+add_to_tech_sharing_group = commonwealth_research
+# Starting tech
+set_technology = {
+	airfield_construction = 1
+	fort_construction = 1
+	desertinfantry_at = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_signal_company = 1
+	tech_logistics_company = 1
+	tech_mountaineers = 1
+	interwar_antitank = 1
+	synth_oil_experiments = 1
+	fuel_silos = 1
+	armor_tech_1 = 1
+	engine_tech_1 = 1
+	fuel_refining = 1
+	armored_car1 = 1
+	tech_mountaineers = 1
+	gwtank_chassis = 1
+	basic_light_tank_chassis = 1
+	basic_heavy_tank_chassis = 1
+	improved_light_tank_chassis = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	basic_train = 1
+	iw_small_airframe = 1
+	basic_small_airframe = 1
+	iw_medium_airframe = 1
+	early_bombs = 1
+}
+
+set_technology = {
+	gwtank_chassis = 1
+	basic_light_tank_chassis = 1
+}
+
+set_technology = {
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_cruiser = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_torpedo = 1
+	basic_depth_charges = 1
+	mtg_transport = 1
+}
+
+add_equipment_to_stockpile = {
+	type = anti_air_equipment_1
+	amount = 1141
+	producer = CAN
+}
+
+add_intel = {
+	target = SPR
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = BUl
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = USA
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = ENG
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = SOV
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = RAJ
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = ITA
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = GER
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = ROM
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = HUN
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = JAP
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = CAN
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = FRA
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = SAF
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = AST
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = NZL
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = NOR
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = FIN
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+#africa leaders
+recruit_character = CAN_charles_foulkes_AFRICA
+recruit_character = CAN_georges_vanier_AFRICA
+recruit_character = CAN_kenneth_stuart_AFRICA
+#
+recruit_character = CAN_mackenzie_king
+recruit_character = CAN_adrien_arcand
+recruit_character = CAN_tim_buck
+recruit_character = CAN_j_s_woodsworth
+recruit_character = CAN_thomas_victor_anderson
+recruit_character = CAN_charles_foulkes
+recruit_character = CAN_percival_john_montague
+recruit_character = CAN_bert_hoffmeister
+recruit_character = CAN_leonard_w_murray
+recruit_character = CAN_ht_bailliegrohman
+recruit_character = CAN_james_d_prentice
+recruit_character = CAN_harry_dewolf
+recruit_character = CAN_george_pearkes
+recruit_character = CAN_john_murchie
+recruit_character = CAN_harold_edwards
+recruit_character = CAN_frederick_m_w_harvey
+recruit_character = CAN_harry_crerar
+recruit_character = CAN_robert_leckie
+recruit_character = CAN_kenneth_stuart
+recruit_character = CAN_andrew_mcnaughton
+recruit_character = CAN_raymond_collishaw
+recruit_character = CAN_guy_simonds
+recruit_character = CAN_gino_verchiella
+recruit_character = CAN_alasdair_murray
+recruit_character = CAN_george_volkoff
+recruit_character = CAN_george_croil
+recruit_character = CAN_percy_nelles
+recruit_character = CAN_robert_manion
+recruit_character = CAN_ian_a_mackenzie
+recruit_character = CAN_c_d_howe
+recruit_character = CAN_newton_wesley_rowell
+recruit_character = CAN_james_ilsley
+recruit_character = CAN_leo_richer_lafleche
+recruit_character = CAN_r_b_bennett
+recruit_character = CAN_louis_st_laurent
+
+
+create_equipment_variant = {
+	name = "Vickers MK VIb"
+	type = light_tank_chassis_2
+	modules = {
+		main_armament_slot = tank_small_cannon
+		turret_type_slot = tank_light_three_man_tank_turret
+		special_type_slot_2 = additional_machine_guns
+		suspension_type_slot = tank_bogie_suspension
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_gasoline_engine
+	}
+}
+
+create_equipment_variant = {
+	name = "Matilda MK III"
+	type = heavy_tank_chassis_1
+	modules = {
+		main_armament_slot = tank_heavy_cannon
+		turret_type_slot = tank_heavy_three_man_tank_turret
+		special_type_slot_1 = secondary_turret_small_cannon
+		special_type_slot_2 = additional_machine_guns
+		special_type_slot_3 = dozer_blade
+		suspension_type_slot = tank_bogie_suspension
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_gasoline_engine
+	}
+}
+
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 2505
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 100
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = support_equipment
+	amount = 1351
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = anti_tank_equipment_1
+	amount = 1250
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 6000
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 7000
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 230
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = heavy_tank_chassis_1
+	amount = 400
+	producer = CAN
+}
+
+add_equipment_to_stockpile = {
+	type = light_tank_chassis_2
+	amount = 1200
+	producer = CAN
+}
+
+# 1939 Start #

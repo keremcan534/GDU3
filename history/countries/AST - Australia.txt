@@ -1,0 +1,294 @@
+﻿capital = 285
+oob = "AST_1936"
+set_research_slots = 4
+set_stability = 0.8
+set_war_support = 0.3
+set_convoys = 600
+set_politics = {
+	ruling_party = democratic
+	last_election = "1934.9.15"
+	election_frequency = 36
+	elections_allowed = yes
+}
+
+add_timed_idea = {
+	idea = airandnavy_idea
+	days = 1320
+}
+
+add_ideas = GDU_refinery_prebuild_disincentive
+add_ideas = AST_great_depression_1
+add_to_tech_sharing_group = commonwealth_research
+set_popularities = {
+	democratic = 98
+	communism = 2
+}
+
+# Starting tech
+set_technology = {
+	airfield_construction = 1
+	fort_construction = 1
+	gwtank_chassis = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	armor_tech_1 = 1
+	engine_tech_1 = 1
+	trench_warfare = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	fleet_in_being = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	synth_oil_experiments = 1
+	basic_train = 1
+	fleet_in_being = 1
+	gwtank_chassis = 1
+	early_ship_hull_light = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	early_ship_hull_submarine = 1
+	basic_battery = 1
+	basic_torpedo = 1
+	basic_depth_charges = 1
+	basic_cruiser_armor_scheme = 1
+	mtg_transport = 1
+	iw_small_airframe = 1
+	basic_small_airframe = 1
+	early_bombs = 1
+	air_torpedoe_1 = 1 # nav bomber 1 guns
+
+}
+add_intel = {
+	target = SPR
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = BUl
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = USA
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = ENG
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = SOV
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = RAJ
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = ITA
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = GER
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = ROM
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = HUN
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = JAP
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = CAN
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = FRA
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = SAF
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = AST
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = NZL
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = NOR
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+
+add_intel = {
+	target = FIN
+	civilian_intel = 200
+	army_intel = 200
+	navy_intel = 200
+	airforce_intel = 200
+}
+#afrıca leaders
+recruit_character = AST_henry_wynter_AFRICA
+recruit_character = AST_iven_mackay_AFRICA
+recruit_character = AST_horace_robertson_AFRICA
+#
+recruit_character = AST_john_curtin
+recruit_character = AST_eric_campbell
+recruit_character = AST_richard_dixon
+recruit_character = AST_earle_page
+recruit_character = AST_rod_hull
+recruit_character = AST_leslie_morshead
+recruit_character = AST_thomas_blamey
+recruit_character = AST_henry_wynter
+recruit_character = AST_alan_vasey
+recruit_character = AST_horace_robertson
+recruit_character = AST_john_northcott
+recruit_character = AST_harold_farncomb
+recruit_character = AST_victor_crutchley
+recruit_character = AST_clive_caldwell
+recruit_character = AST_sydney_rowell
+recruit_character = AST_richard_williams
+recruit_character = AST_iven_mackay
+recruit_character = AST_ragnar_colvin
+recruit_character = AST_norman_makin
+recruit_character = AST_james_fairbairn
+recruit_character = AST_john_collins
+recruit_character = AST_arthur_allen
+recruit_character = AST_vernon_sturdee
+recruit_character = AST_jack_crace
+recruit_character = AST_cederic_hicks
+recruit_character = AST_charles_burnett
+recruit_character = AST_edmund_herring
+recruit_character = AST_arthur_drakeford
+recruit_character = AST_john_lavarack
+recruit_character = AST_robert_g_menzies
+recruit_character = AST_ben_chifley
+recruit_character = AST_arthur_calwell
+recruit_character = AST_herbert_v_evatt
+recruit_character = AST_jack_beasley
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 1233
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 100
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = support_equipment
+	amount = 287
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 200
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 4000
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 2000
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = anti_air_equipment_1
+	amount = 733
+	producer = AST
+}
+
+add_equipment_to_stockpile = {
+	type = anti_tank_equipment_1
+	amount = 250
+	producer = AST
+}
