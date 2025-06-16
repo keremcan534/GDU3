@@ -1397,7 +1397,7 @@ equipment_modules = {
 
 		add_stats = {
 			air_defence = 1
-			build_cost_ic = 1.5
+			build_cost_ic = 3
 			weight = 4
 		}
 		xp_cost = 0
@@ -1924,7 +1924,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
-			build_cost_ic = 1
+			build_cost_ic = 2
 			weight = 2
 			air_attack = 3.0
 			air_defence = 1.0
@@ -2022,7 +2022,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
-			build_cost_ic = 2
+			build_cost_ic = 4
 			weight = 4
 			air_attack = 7.0
 			air_defence = 2.0
